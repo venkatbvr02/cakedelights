@@ -24,11 +24,11 @@ public class LoginDaoImpl implements LoginDao {
    // private static final String crequuer="select rd.username,rd.password from registrationdetails as rd where rd.username=:username and rd.password=:password";
     @Override
     @javax.transaction.Transactional
-    public void checkLoginDetails(LoginEntity loginEntity) {
-        
-        RegistrationdetailsEntity registrationdetailsEntity;
-
-        SessionFactory sessionFactory = HibernateUtils.getSessionFactory();
+    public String checkLoginDetails(LoginEntity loginEntity) {
+        String result="";
+        //RegistrationdetailsEntity registrationdetailsEntity;
+        HibernateUtils hibernateUtils=HibernateUtils.getInstance();
+        SessionFactory sessionFactory = hibernateUtils.getSessionFactory();
         Session session = sessionFactory.openSession();
 
        // String result="";
@@ -51,14 +51,16 @@ public class LoginDaoImpl implements LoginDao {
                   System.out.println("actual password "+password+" ::::: "+registrationdetailsEntity1.getPassword());
 
                   if (registrationdetailsEntity1.getUsername().equals(username)&&PasswordHashing.check(password,registrationdetailsEntity1.getPassword())) {
-                     // result = "success";
+                      result = "Success";
                       System.out.println("Login Success");
+                      //return result;
                   }
 
-//                  else
-//                  {
-//                      result="failure";
-//                  }
+                else
+                                    {
+                      result="failure";
+                      //return  result;
+                  }
               }
             //System.out.println("geeting result as form of list :::::::::::: "+results.toString());
 
@@ -86,9 +88,12 @@ public class LoginDaoImpl implements LoginDao {
         finally{
 //            session.flush();
             session.close();
-            sessionFactory.close();
+            //sessionFactory.close();
+            //sessionFactory.close();
 
         }
-         //return result;
+  //return result;       //return result;
+        return result;
  }
+
 }

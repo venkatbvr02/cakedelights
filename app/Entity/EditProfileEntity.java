@@ -19,8 +19,8 @@ public class EditProfileEntity {
     public String familyType;
     @Column(name="familyValues")
     public String familyValues;
-    @Column(name="anyDisability")
-    public String anyDisability;
+    @Column(name="anydisability")
+    public String anydisability;
     @Column(name="caste")
     public String caste;
     @Column(name = "subCaste")
@@ -37,6 +37,8 @@ public class EditProfileEntity {
     public String occupation;
     @Column(name="income")
     public int income;
+    @Column(name="incomecurrencytype")
+    public String incomecurrencytype;
     @Column(name="aboutMe")
     public String aboutMe;
 
@@ -80,12 +82,12 @@ public class EditProfileEntity {
         this.familyValues = familyValues;
     }
 
-    public String getAnyDisability() {
-        return anyDisability;
+    public String getAnydisability() {
+        return anydisability;
     }
 
-    public void setAnyDisability(String anyDisability) {
-        this.anyDisability = anyDisability;
+    public void setAnydisability(String anydisability) {
+        this.anydisability = anydisability;
     }
 
     public String getCaste() {
@@ -150,6 +152,14 @@ public class EditProfileEntity {
 
     public void setIncome(int income) {
         this.income = income;
+    }
+
+    public String getIncomecurrencytype() {
+        return incomecurrencytype;
+    }
+
+    public void setIncomecurrencytype(String incomecurrencytype) {
+        this.incomecurrencytype = incomecurrencytype;
     }
 
     public String getAboutMe() {

@@ -24,5 +24,6 @@
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <mapping class="Entity.RegistrationdetailsEntity"/>
         <mapping class="Entity.EditProfileEntity"/>
+        <mapping class="Entity.CompleteProfileEntity"/>
     </session-factory>
 </hibernate-configuration>

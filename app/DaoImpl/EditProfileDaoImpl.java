@@ -13,14 +13,14 @@ public class EditProfileDaoImpl implements EditProfileDao {
 
     @Override
     public void editProfileDetails(EditProfileEntity editProfileEntity) {
-
-        SessionFactory sessionFactory = HibernateUtils.getSessionFactory();
+HibernateUtils hibernateUtils=HibernateUtils.getInstance();
+        SessionFactory sessionFactory = hibernateUtils.getSessionFactory();
         Session session = sessionFactory.openSession();
         Transaction tx=session.beginTransaction();
         session.save(editProfileEntity);
         tx.commit();;
         session.close();
-        sessionFactory.close();
+        //sessionFactory.close();
 
     }
 }

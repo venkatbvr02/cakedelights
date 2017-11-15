@@ -1,22 +1,54 @@
 package com.srujanika.utils;
 
+import org.hibernate.HibernateException;
+import org.hibernate.Metamodel;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.type.EntityType;
 
-    public class HibernateUtils {
-            public static  SessionFactory sessionFactory;
-        private HibernateUtils() {
+import javax.persistence.Query;
+
+public class HibernateUtils {
+    private static HibernateUtils instance = null;
+
+    private static SessionFactory sessionFactory;
+    //private static StandardServiceRegistry serviceRegistry;
+
+    private HibernateUtils(){
+        Configuration configuration = new Configuration();
+        configuration.configure();
+       // serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
+        sessionFactory = configuration.buildSessionFactory();
+    }
+
+    public static HibernateUtils getInstance(){
+        if(instance == null){
+            instance  = new HibernateUtils();
         }
-//maling the Hibernate SessionFactory object as singleton
+        return instance;
+    }
 
-        public static synchronized SessionFactory getSessionFactory() {
+    public static SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
 
-            if (sessionFactory == null) {
-                sessionFactory = new Configuration().configure("hibernate.cfg.xml").
-                        buildSessionFactory();
-            }
-            return sessionFactory;
-        }
+
+//            public static  SessionFactory sessionFactory;
+//        private HibernateUtils() {
+//        }
+////maling the Hibernate SessionFactory object as singleton
+//
+//        public static synchronized SessionFactory getSessionFactory() {
+//
+//            if (sessionFactory == null) {
+//                sessionFactory = new Configuration().configure("hibernate.cfg.xml").
+//                        buildSessionFactory();
+//            }
+//            return sessionFactory;
+//        }
 
 //            static {
 //                try {

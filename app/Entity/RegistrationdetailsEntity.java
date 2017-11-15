@@ -1,12 +1,22 @@
 package Entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
 @Table(name = "registrationdetails", schema = "matrimony", catalog = "")
 public class RegistrationdetailsEntity {
+
+    @GenericGenerator(name = "sequence_dep_id", strategy = "DaoImpl.")
+    @Column(name="id")
     private int id;
+    @Id
+    @GenericGenerator(name = "sequence_profile_id", strategy = "Entity.ProfileIdGenerator")
+    @GeneratedValue(generator = "sequence_profile_id")
+    @Column(name="profile_id")
+    private String profileId;
     private String username;
     private String password;
     private String email;
@@ -14,14 +24,20 @@ public class RegistrationdetailsEntity {
     private String sex;
     private String subject;
 
-    @Id
-    @Column(name = "id", nullable = false)
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getProfileId() {
+        return profileId;
+    }
+
+    public void setProfileId(String profileId) {
+        this.profileId = profileId;
     }
 
     @Basic
@@ -61,7 +77,7 @@ public class RegistrationdetailsEntity {
     }
 
     public void setAge(Date age) {
-        this.age = age;
+        this.age =age;
     }
 
     @Basic

@@ -1,7 +1,10 @@
 package controllers;
 
 import Entity.EditProfileEntity;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import play.api.libs.json.Json;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
@@ -19,10 +22,25 @@ public class EditProfileController extends Controller {
     public Result edit()
     {
         System.out.println(" coming to here ;;;;;;;");
-
         JsonNode jsonNode;
         jsonNode=request().body().asJson();
-        System.out.println("::::::::::::::: "+jsonNode.asText());
+
+        ObjectMapper jsonObjectMapper = new ObjectMapper();
+        try {
+            EditProfileEntity editProfileEntity=jsonObjectMapper.treeToValue(jsonNode,EditProfileEntity.class);
+            System.out.println(editProfileEntity.getAboutMe()+" ::::::::::::: "+editProfileEntity.getCaste());
+            editProfileService.editProfileDetails(editProfileEntity);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+
+        // jsonNode.findValues("datas");
+      //  EditProfileEntity editProfileEntity=new EditProfileEntity()();
+        //editProfileEntity.setMaritalStatus(jsonNode.get(maritalstatus));
+
+        System.out.println("::::::::::::::: :::"+jsonNode.get("height"));
+        System.out.println("::::::::::::::: :::"+jsonNode.asText());
         response().setHeader("Access-Control-Allow-Origin", "*");
 //        editProfileService.editProfileDetails(editProfileEntity);
 

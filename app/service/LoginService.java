@@ -1,7 +1,8 @@
 package service;
 
 import Entity.LoginEntity;
+import Entity.RegistrationdetailsEntity;
 
 public interface LoginService {
-    void checkLoginDetails(LoginEntity loginEntity);
+    String checkLoginDetails(LoginEntity loginEntity);
 }

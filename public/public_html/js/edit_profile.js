@@ -5,18 +5,21 @@
  */
 
 var edit_profile={};
+$body=$("body");
 function completeRegsistration() {
     // alert(JSON.stringify(edit_profile));
    if( dovalidation()) {
-       alert(JSON.stringify(edit_profile));
+       // alert(JSON.stringify(edit_profile));
+       $body.addClass("loading");
        $.ajax({
-           url: baseurl+"/edit",
+           url: baseurl+"/srv003",
            method: "POST",
            contentType: 'application/json',
            //dataType: "json",
            data: JSON.stringify(edit_profile),
            crossDomain: true,
            success: function (data) {
+               $body.removeClass("loading");
                alert(data);
                window.location = baseurl+"/assets/public_html/add_profilepic.html";
            }
@@ -36,7 +39,7 @@ function dovalidation() {
         showAlert("validation error", "Marital status should not empty");
         return false;
     } else {
-        edit_profile["maritalStatus"] = maritalstatus;
+        edit_profile["at007"] = maritalstatus;
     }
     //for marital status
     var anydisability  = getRadioValue("anydisability");
@@ -44,16 +47,16 @@ function dovalidation() {
         showAlert("validation error", "disability  should not empty");
         return false;
     } else {
-        edit_profile["anydisability"] = anydisability;
+        edit_profile["at012"] = anydisability;
     }
     //for height
-    var height=getTextValue("height");
+    var height=getDropdownValue("height");
     if(height == null||height == "")
     {
         showAlert("validation error","height shouldn't be empty");
         return false;
     }else {
-        edit_profile["height"]=height;
+        edit_profile["at008"]=height;
     }
     // for caste
     var caste=getTextValue("caste");
@@ -62,7 +65,7 @@ function dovalidation() {
         showAlert("validation error","caste shouldn't be empty");
         return false;
     }else {
-        edit_profile["caste"]=caste;
+        edit_profile["at013"]=caste;
     }
     //for Subcaste
     var subcaste=getTextValue("subcaste");
@@ -71,7 +74,7 @@ function dovalidation() {
         showAlert("validation error","sub caste shouldn't be empty");
         return false;
     }else {
-        edit_profile["subCaste"]=subcaste;
+        edit_profile["at014"]=subcaste;
     }
     //for gothram
     var gothram=getTextValue("gothram");
@@ -80,7 +83,7 @@ function dovalidation() {
         showAlert("validation error","gothram shouldn't be empty");
         return false;
     }else {
-        edit_profile["gothram"]=gothram;
+        edit_profile["at015"]=gothram;
     }
     //for dosham
     var dosham=getTextValue("dosham");
@@ -89,7 +92,7 @@ function dovalidation() {
         showAlert("validation error","gothram shouldn't be empty");
         return false;
     }else {
-        edit_profile["dosham"]=dosham;
+        edit_profile["at016"]=dosham;
     }
     //for higher education
     var highesteducation=getTextValue("highesteducation");
@@ -98,7 +101,7 @@ function dovalidation() {
         showAlert("validation error","highesteducation shouldn't be empty");
         return false;
     }else {
-        edit_profile["higherEducation"]=highesteducation;
+        edit_profile["at017"]=highesteducation;
     }
     //for employed in
     var employedIn=getTextValue("employedIn");
@@ -107,7 +110,7 @@ function dovalidation() {
         showAlert("validation error","employed In shouldn't be empty");
         return false;
     }else {
-        edit_profile["employedIn"]=employedIn;
+        edit_profile["at018"]=employedIn;
     }
     //for occupation
     var occupation=getTextValue("occupation");
@@ -116,7 +119,7 @@ function dovalidation() {
         showAlert("validation error","occupation shouldn't be empty");
         return false;
     }else {
-        edit_profile["occupation"]=occupation;
+        edit_profile["at019"]=occupation;
     }
 
     //for income
@@ -126,7 +129,7 @@ function dovalidation() {
         showAlert("validation error","income shouldn't be empty");
         return false;
     }else {
-        edit_profile["income"]=income;
+        edit_profile["at020"]=income;
     }
     //for about me
     var aboutme=getTextValue("aboutme");
@@ -135,7 +138,7 @@ function dovalidation() {
         showAlert("validation error","aboutme shouldn't be empty");
         return false;
     }else {
-        edit_profile["aboutMe"]=aboutme;
+        edit_profile["at022"]=aboutme;
     }
 
     //for family status
@@ -144,7 +147,7 @@ function dovalidation() {
         showAlert("validation error", "Family status should not empty");
         return false;
     } else {
-        edit_profile["familyStatus"] = familystatus;
+        edit_profile["at009"] = familystatus;
     }
 
     //for family type
@@ -153,7 +156,7 @@ function dovalidation() {
         showAlert("validation error", "Family type should not empty");
         return false;
     } else {
-        edit_profile["familyType"] = familyType;
+        edit_profile["at010"] = familyType;
     }
 
     var familyValues = getRadioValue("familyvalues");
@@ -161,7 +164,7 @@ function dovalidation() {
         showAlert("validation error", "Family values should not empty");
         return false;
     } else {
-        edit_profile["familyValues"] = familyValues;
+        edit_profile["at011"] = familyValues;
     }
     //employed in
     var employedIn = getRadioValue("employedIn");
@@ -169,7 +172,7 @@ function dovalidation() {
         showAlert("validation error", "Employed In should not empty");
         return false;
     } else {
-        edit_profile["employedIn"] = employedIn;
+        edit_profile["at018"] = employedIn;
     }
     //for currency type
     var incomecurrencytype = getRadioValue("incomecurrencytype");
@@ -177,7 +180,7 @@ function dovalidation() {
         showAlert("validation error", "Income per month/year  should not empty");
         return false;
     } else {
-        edit_profile["incomecurrencytype"] = incomecurrencytype;
+        edit_profile["at021"] = incomecurrencytype;
     }
 
     //for text field validation

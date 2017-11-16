@@ -1,17 +1,20 @@
 var register={};
+$body = $("body");
 $('#regsister_submit').click(function () {
 
 
     if(dovalidation()) {
+        $body.addClass("loading");
         alert(JSON.stringify(register));
         $.ajax({
-            url: baseurl+"/register",
+            url: baseurl+"/srv001",
             method: "POST",
             contentType: 'application/json',
             data: JSON.stringify(register),
             crossDomain: true,
             success: function (data) {
-                alert(data);
+                $body.removeClass("loading");
+
                 if(data==":registration sucess") {
                     window.location.href = baseurl + "/assets/public_html/edit_profile.html";
                 }
@@ -32,7 +35,7 @@ if(username==null||username=="")
 }
 
 else {
-    register["username"]=username;
+    register["at001"]=username;
     }
 //for password
     var password=getTextValue("password");
@@ -43,26 +46,27 @@ if(password==null||password=="")
 }
 else
 {
-    register["password"]=password;
+    register["at002"]=password;
 }
 
 //for email
 var email=getTextValue("email");
     var atpos = email.indexOf("@");
     var dotpos = email.lastIndexOf(".");
-    if(email==null||email=="")
-    {
-    showAlert("validation error","password should not be empty");
-    return false;
-    }
-    else if (atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length)
+
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length)
     {
         showAlert("Validation Error","Not a Valid Email address");
         return false;
     }
+    else if(email==null||email=="")
+    {
+        showAlert("validation error","password should not be empty");
+        return false;
+    }
 else
 {
-    register["email"]=email;
+    register["at003"]=email;
 }
 //for date
     var age=getTextValue("age");
@@ -72,7 +76,7 @@ if(age==null||age=="")
     return false;
 }
 else {
-    register["age"]=age;
+    register["at004"]=age;
 }
 //for sex
     var sex=getRadioValue("sex");
@@ -82,7 +86,7 @@ if(sex==null||sex=="")
     return false;
 }
 else {
-    register["sex"]=sex;
+    register["at005"]=sex;
 }
 var subject=getTextValue("subject");
 if(subject==null||subject=="")
@@ -91,7 +95,7 @@ if(subject==null||subject=="")
     return false;
 }
 else {
-    register["subject"]=subject;
+    register["at006"]=subject;
 }
     return true;
 }

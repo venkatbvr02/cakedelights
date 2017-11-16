@@ -5,21 +5,25 @@
  */
 
 var completeprofile={};
+$body = $("body");
 function completeRegistration() {
     //alert("coming here");
     //alert(JSON.stringify(completeprofile));
     if( dovalidation()) {
+        $body.addClass("loading");
       alert(JSON.stringify(completeprofile));
         $.ajax({
-            url: baseurl+"/completeprofile",
+            url: baseurl+"/srv004",
             method: "POST",
             contentType: 'application/json',
             //dataType: "json",
             data: JSON.stringify(completeprofile),
             crossDomain: true,
             success: function (data) {
-                alert(data);
-                window.location = baseurl+"/assets/public_html/add_profilepic.html";
+                alert("Registration Success");
+                $body.removeClass("loading");
+
+                window.location = baseurl+"/assets/public_html/index.html";
             }
         });
     }
@@ -37,7 +41,7 @@ function dovalidation() {
         showAlert("validation error", "body type  should not empty");
         return false;
     } else {
-        completeprofile["bodytype"] = bodytype;
+        completeprofile["at023"] = bodytype;
     }
     //for weight
     var weight=getDropdownValue("weight");
@@ -47,7 +51,7 @@ function dovalidation() {
         return false;
     }
     else {
-        completeprofile["weight"]=weight;
+        completeprofile["at024"]=weight;
 
     }
     var educationInDetail=getTextValue("educationInDetail");
@@ -57,7 +61,7 @@ function dovalidation() {
         return false;
     }
     else {
-        completeprofile["educationInDetail"]=educationInDetail;
+        completeprofile["at025"]=educationInDetail;
     }
     var occupationInDetail=getTextValue("occupationInDetail");
     if(occupationInDetail==null||occupationInDetail=="")
@@ -67,7 +71,7 @@ function dovalidation() {
     }
     else
     {
-        completeprofile["occupationInDetail"]=occupationInDetail;
+        completeprofile["at026"]=occupationInDetail;
     }
     var eatingHabbit=getRadioValue("eatingHabbit");
     if(eatingHabbit==null||eatingHabbit=="")
@@ -76,7 +80,7 @@ function dovalidation() {
         return false;
     }
     else {
-        completeprofile["eatingHabbit"] = eatingHabbit;
+        completeprofile["at027"] = eatingHabbit;
     }
     var drinkingHabbit=getRadioValue("drinkingHabbit");
     if(drinkingHabbit==null||drinkingHabbit=="")
@@ -85,7 +89,7 @@ function dovalidation() {
         return false;
     }
     else {
-        completeprofile["drinkingHabbit"]=drinkingHabbit;
+        completeprofile["at028"]=drinkingHabbit;
     }
     var smokingHabbit=getRadioValue("smokingHabbit");
     if(smokingHabbit==null||smokingHabbit=="")
@@ -94,7 +98,7 @@ function dovalidation() {
         return false;
     }
     else {
-        completeprofile["smokingHabbit"]=smokingHabbit;
+        completeprofile["at029"]=smokingHabbit;
     }
     var star=getDropdownValue("star");
     if(star==null||star=="")
@@ -103,7 +107,7 @@ function dovalidation() {
         return false;
     }
     else {
-        completeprofile["star"]=star;
+        completeprofile["at030"]=star;
     }
     var raasi=getTextValue("raasi");
     if(raasi==null||raasi=="")
@@ -112,7 +116,7 @@ function dovalidation() {
         return false;
     }
     else {
-        completeprofile["raasi"]=raasi;
+        completeprofile["at031"]=raasi;
     }
 
     var hours=getDropdownValue("hours");
@@ -122,7 +126,7 @@ function dovalidation() {
         return false;
     }
     else {
-        completeprofile["hours"]=hours;
+        completeprofile["at032"]=hours;
     }
     var minutes=getDropdownValue("minutes");
     if(minutes==null||minutes=="")
@@ -131,7 +135,7 @@ function dovalidation() {
         return false;
     }
     else {
-        completeprofile["minutes"]=minutes;
+        completeprofile["at033"]=minutes;
     }
     var ampm=getDropdownValue("ampm");
     if(ampm==null||ampm=="")
@@ -140,7 +144,7 @@ function dovalidation() {
         return false;
     }
     else {
-        completeprofile["ampm"]=ampm;
+        completeprofile["at034"]=ampm;
     }
 
     var country=getDropdownValue("country");
@@ -150,7 +154,7 @@ function dovalidation() {
         return false;
     }
     else {
-        completeprofile["country"]=country;
+        completeprofile["at035"]=country;
     }
     var state=getDropdownValue("state");
     if(state==null||state=="")
@@ -159,7 +163,7 @@ function dovalidation() {
         return false;
     }
     else {
-        completeprofile["state"]=state;
+        completeprofile["at036"]=state;
     }
     var city=getDropdownValue("city");
     if(city==null||city=="")
@@ -168,7 +172,7 @@ function dovalidation() {
         return false;
     }
     else {
-        completeprofile["city"]=city;
+        completeprofile["at037"]=city;
     }
 
     var fatherstatus=getDropdownValue("fatherstatus");
@@ -178,7 +182,7 @@ function dovalidation() {
         return false;
     }
     else {
-        completeprofile["fatherstatus"]=fatherstatus;
+        completeprofile["at038"]=fatherstatus;
     }
     var motherstatus=getDropdownValue("motherstatus");
     if(motherstatus==null||motherstatus=="")
@@ -187,7 +191,7 @@ function dovalidation() {
         return false;
     }
     else {
-        completeprofile["motherstatus"]=motherstatus;
+        completeprofile["at039"]=motherstatus;
     }
     var noofbrothers=getDropdownValue("noofbrothers");
     if(noofbrothers==null||noofbrothers=="")
@@ -196,7 +200,7 @@ function dovalidation() {
         return false;
     }
     else {
-        completeprofile["noofbrothers"]=noofbrothers;
+        completeprofile["at040"]=noofbrothers;
     }
     var noofbrothersmarried=getDropdownValue("noofbrothersmarried");
     if(noofbrothersmarried==null||noofbrothersmarried=="")
@@ -205,7 +209,7 @@ function dovalidation() {
         return false;
     }
     else {
-        completeprofile["noofbrothersmarried"]=noofbrothersmarried;
+        completeprofile["at041"]=noofbrothersmarried;
     }
     var noofsisters=getDropdownValue("noofsisters");
     if(noofsisters==null||noofsisters=="")
@@ -214,7 +218,7 @@ function dovalidation() {
         return false;
     }
     else {
-        completeprofile["noofsisters"]=noofsisters;
+        completeprofile["at042"]=noofsisters;
     }
     var noofsistersmarried=getDropdownValue("noofsistersmarried");
     if(noofsistersmarried==null||noofsistersmarried=="")
@@ -223,14 +227,14 @@ function dovalidation() {
         return false;
     }
     else {
-        completeprofile["noofsistersmarried"]=noofsistersmarried;
+        completeprofile["at043"]=noofsistersmarried;
     }
     var familylocation = getRadioValue("familylocation");
     if (familylocation == null || familylocation == "") {
         showAlert("validation error", "familylocation  should not empty");
         return false;
     } else {
-        completeprofile["familylocation"] = familylocation;
+        completeprofile["at044"] = familylocation;
     }
     var countrycode=getDropdownValue("countrycode");
     if(countrycode==null||countrycode=="")
@@ -239,7 +243,7 @@ function dovalidation() {
         return false;
     }
     else {
-        completeprofile["countrycode"]=countrycode;
+        completeprofile["at045"]=countrycode;
     }
     var mobilenumber=getTextValue("mobilenumber");
     if(mobilenumber==null||mobilenumber=="")
@@ -248,7 +252,7 @@ function dovalidation() {
         return false;
     }
     else {
-        completeprofile["mobilenumber"]=mobilenumber;
+        completeprofile["at046"]=mobilenumber;
     }
     var ancestralorigin=getTextValue("ancestralorigin");
     if(ancestralorigin==null||ancestralorigin=="")
@@ -257,7 +261,7 @@ function dovalidation() {
         return false;
     }
     else {
-        completeprofile["ancestralorigin"]=ancestralorigin;
+        completeprofile["at047"]=ancestralorigin;
     }
     return true;
 }

@@ -15,7 +15,7 @@ public class CompleteProfileController extends Controller {
     @Inject
     CompleteProfileServiceImpl completeProfileService;
     @BodyParser.Of(BodyParser.Json.class)
-    public Result completeprofile()
+    public Result srv004()
     {
 
         JsonNode jsonNode=request().body().asJson();
@@ -24,7 +24,7 @@ public class CompleteProfileController extends Controller {
         try
         {
             CompleteProfileEntity completeProfileEntity=objectMapper.treeToValue(jsonNode,CompleteProfileEntity.class);
-            System.out.println(completeProfileEntity.getCountry()+":::::::::::"+completeProfileEntity.getState());
+            System.out.println(completeProfileEntity.getAt035()+":::::::::::"+completeProfileEntity.getAt036());
             completeProfileService.saveCompleteProfileDetails(completeProfileEntity);
             //System.out.println(completeProfileService.toString());
         }

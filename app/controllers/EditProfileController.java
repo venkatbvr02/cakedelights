@@ -19,7 +19,7 @@ public class EditProfileController extends Controller {
     @Inject
     EditProfileServiceImpl editProfileService;
    @BodyParser.Of(BodyParser.Json.class)
-    public Result edit()
+    public Result srv003()
     {
         System.out.println(" coming to here ;;;;;;;");
         JsonNode jsonNode;
@@ -28,7 +28,7 @@ public class EditProfileController extends Controller {
         ObjectMapper jsonObjectMapper = new ObjectMapper();
         try {
             EditProfileEntity editProfileEntity=jsonObjectMapper.treeToValue(jsonNode,EditProfileEntity.class);
-            System.out.println(editProfileEntity.getAboutMe()+" ::::::::::::: "+editProfileEntity.getCaste());
+            System.out.println(editProfileEntity.getAt022()+" ::::::::::::: "+editProfileEntity.getAt013());
             editProfileService.editProfileDetails(editProfileEntity);
         } catch (JsonProcessingException e) {
             e.printStackTrace();

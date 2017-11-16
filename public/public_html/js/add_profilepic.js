@@ -13,7 +13,20 @@ $(document).ready(function () {
            
         }
     };
+//$('#imageinput').change(function(){
+function saveimage() {
 
+    var frm = new FormData();
+    frm.append('imageInput', input.files[0]);
+    $.ajax({
+        method: 'POST',
+        address: 'E:\\profileimages',
+        data: frm,
+        contentType: false,
+        processData: false,
+        cache: false
+    });
+}
 
     $(".file-upload").on('change', function () {
         readURL(this);

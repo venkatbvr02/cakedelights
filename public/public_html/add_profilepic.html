@@ -141,14 +141,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <div class="col-md-1"></div>
                             <div class="col-md-5">
                                 <div class="upload-button"><input type="button" class="btn btn-warning" value=" Upload Image "/></div>
-                                <input class="file-upload" type="file" accept="image/*"/>
+                                <input class="file-upload" id="imageinput" name="imageinput" type="file" accept="image/*"/>
                                 <hr/>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6"></div>
                             <div class="col-md-3">
-                                <button class="btn btn-info pull-right" id="nextbutton" >Next</button>
+                                <button class="btn btn-info pull-right" id="nextbutton" onclick="saveimage();">Next</button>
                             </div>
                             <div class="col-md-3">
                                 <button class="btn btn-default pull-right" id='illdothislater' ><font color='#39b3d7'>I'll do this later ></font></button>&nbsp;&nbsp;&nbsp;
@@ -210,6 +210,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
         <!--<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />-->
         <script src="js/edit_profile.js" type="text/javascript"></script>
+        <script src="js/add_profilepic.js" type="text/javascript"></script>
         <script>
             // Can also be used with $(document).ready()
             $(document).ready(function () {

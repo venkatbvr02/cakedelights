@@ -29,7 +29,7 @@ public class ProfileIdGenerator implements IdentifierGenerator {
         try {
             Statement statement=connection.createStatement();
 
-            ResultSet rs=statement.executeQuery("select max(id) from db_matrimony.registrationdetails");
+            ResultSet rs=statement.executeQuery("select max(at000) from db_matrimony.registrationdetails");
 
             if(rs.next())
             {

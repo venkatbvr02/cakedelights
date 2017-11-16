@@ -12,265 +12,265 @@ import java.io.Serializable;
 @Table(name="completeprofiledetails", schema="matrimony")
 public class CompleteProfileEntity implements Serializable{
     @Id
-    @Column(name="id", nullable = false)
-    public int id;
-    @Column(name = "bodytype",nullable = false)
-    public String bodytype;
-    @Column(name = "weight",nullable = false)
-    public String weight;
-    @Column(name = "educationInDetail",nullable = false)
-    public String educationInDetail;
-    @Column(name = "occupationInDetail",nullable = false)
-    public String occupationInDetail;
-    @Column(name = "eatingHabbit",nullable = false)
-    public String eatingHabbit;
-    @Column(name = "drinkingHabbit",nullable = false)
-    public String drinkingHabbit;
-    @Column(name = "smokingHabbit",nullable = false)
-    public String smokingHabbit;
-    @Column(name="star",nullable = false)
-    public String star;
-    @Column(name="raasi",nullable = false)
-    public String raasi;
-    @Column(name = "hours",nullable = false)
-    public String hours;
-    @Column(name = "minutes",nullable = false)
-    public String minutes;
-    @Column(name = "ampm",nullable = false)
-    public String ampm;
-    @Column(name = "country",nullable = false)
-    public String country;
-    @Column(name = "state",nullable = false)
-    public String state;
-    @Column(name = "city",nullable = false)
-    public String city;
-    @Column(name = "fatherstatus",nullable = false)
-    public String fatherstatus;
-    @Column(name = "motherstatus",nullable = false)
-    public String motherstatus;
-    @Column(name = "noofbrothers", nullable = false)
-    public String noofbrothers;
-    @Column(name = "noofbrothersmarried",nullable = false)
-    public String noofbrothersmarried;
-    @Column(name = "noofsisters",nullable = false)
-    public String noofsisters;
-    @Column(name = "noofsistersmarried",nullable = false)
-    public String noofsistersmarried;
-    @Column(name = "familylocation",nullable = false)
-    public String familylocation;
-    @Column(name = "countrycode",nullable = false)
-    public String countrycode;
-    @Column(name = "mobilenumber",nullable = false)
-    public long mobilenumber;
-    @Column(name = "ancestralorigin",nullable = false)
-    public String ancestralorigin;
+    @Column(name="at000", nullable = false)
+    public int at000;
+    @Column(name = "at023",nullable = false)
+    public String at023;
+    @Column(name = "at024",nullable = false)
+    public String at024;
+    @Column(name = "at025",nullable = false)
+    public String at025;
+    @Column(name = "at026",nullable = false)
+    public String at026;
+    @Column(name = "at027",nullable = false)
+    public String at027;
+    @Column(name = "at028",nullable = false)
+    public String at028;
+    @Column(name = "at029",nullable = false)
+    public String at029;
+    @Column(name="at030",nullable = false)
+    public String at030;
+    @Column(name="at031",nullable = false)
+    public String at031;
+    @Column(name = "at032",nullable = false)
+    public String at032;
+    @Column(name = "at033",nullable = false)
+    public String at033;
+    @Column(name = "at034",nullable = false)
+    public String at034;
+    @Column(name = "at035",nullable = false)
+    public String at035;
+    @Column(name = "at036",nullable = false)
+    public String at036;
+    @Column(name = "at037",nullable = false)
+    public String at037;
+    @Column(name = "at038",nullable = false)
+    public String at038;
+    @Column(name = "at039",nullable = false)
+    public String at039;
+    @Column(name = "at040", nullable = false)
+    public String at040;
+    @Column(name = "at041",nullable = false)
+    public String at041;
+    @Column(name = "at042",nullable = false)
+    public String at042;
+    @Column(name = "at043",nullable = false)
+    public String at043;
+    @Column(name = "at044",nullable = false)
+    public String at044;
+    @Column(name = "at045",nullable = false)
+    public String at045;
+    @Column(name = "at046",nullable = false)
+    public long at046;
+    @Column(name = "at047",nullable = false)
+    public String at047;
 
-    public int getId() {
-        return id;
+    public int getAt000() {
+        return at000;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setAt000(int at000) {
+        this.at000 = at000;
     }
 
-    public String getBodytype() {
-        return bodytype;
+    public String getAt023() {
+        return at023;
     }
 
-    public void setBodytype(String bodytype) {
-        this.bodytype = bodytype;
+    public void setAt023(String at023) {
+        this.at023 = at023;
     }
 
-    public String getWeight() {
-        return weight;
+    public String getAt024() {
+        return at024;
     }
 
-    public void setWeight(String weight) {
-        this.weight = weight;
+    public void setAt024(String at024) {
+        this.at024 = at024;
     }
 
-    public String getEducationInDetail() {
-        return educationInDetail;
+    public String getAt025() {
+        return at025;
     }
 
-    public void setEducationInDetail(String educationInDetail) {
-        this.educationInDetail = educationInDetail;
+    public void setAt025(String at025) {
+        this.at025 = at025;
     }
 
-    public String getOccupationInDetail() {
-        return occupationInDetail;
+    public String getAt026() {
+        return at026;
     }
 
-    public void setOccupationInDetail(String occupationInDetail) {
-        this.occupationInDetail = occupationInDetail;
+    public void setAt026(String at026) {
+        this.at026 = at026;
     }
 
-    public String getNoofbrothersmarried() {
-        return noofbrothersmarried;
+    public String getAt027() {
+        return at027;
     }
 
-    public void setNoofbrothersmarried(String noofbrothersmarried) {
-        this.noofbrothersmarried = noofbrothersmarried;
+    public void setAt027(String at027) {
+        this.at027 = at027;
     }
 
-    public String getNoofsistersmarried() {
-        return noofsistersmarried;
+    public String getAt028() {
+        return at028;
     }
 
-    public void setNoofsistersmarried(String noofsistersmarried) {
-        this.noofsistersmarried = noofsistersmarried;
+    public void setAt028(String at028) {
+        this.at028 = at028;
     }
 
-    public String getEatingHabbit() {
-        return eatingHabbit;
+    public String getAt029() {
+        return at029;
     }
 
-    public void setEatingHabbit(String eatingHabbit) {
-        this.eatingHabbit = eatingHabbit;
+    public void setAt029(String at029) {
+        this.at029 = at029;
     }
 
-    public String getDrinkingHabbit() {
-        return drinkingHabbit;
+    public String getAt030() {
+        return at030;
     }
 
-    public void setDrinkingHabbit(String drinkingHabbit) {
-        this.drinkingHabbit = drinkingHabbit;
+    public void setAt030(String at030) {
+        this.at030 = at030;
     }
 
-    public String getSmokingHabbit() {
-        return smokingHabbit;
+    public String getAt031() {
+        return at031;
     }
 
-    public void setSmokingHabbit(String smokingHabbit) {
-        this.smokingHabbit = smokingHabbit;
+    public void setAt031(String at031) {
+        this.at031 = at031;
     }
 
-    public String getStar() {
-        return star;
+    public String getAt032() {
+        return at032;
     }
 
-    public void setStar(String star) {
-        this.star = star;
+    public void setAt032(String at032) {
+        this.at032 = at032;
     }
 
-    public String getRaasi() {
-        return raasi;
+    public String getAt033() {
+        return at033;
     }
 
-    public void setRaasi(String raasi) {
-        this.raasi = raasi;
+    public void setAt033(String at033) {
+        this.at033 = at033;
     }
 
-    public String getHours() {
-        return hours;
+    public String getAt034() {
+        return at034;
     }
 
-    public void setHours(String hours) {
-        this.hours = hours;
+    public void setAt034(String at034) {
+        this.at034 = at034;
     }
 
-    public String getMinutes() {
-        return minutes;
+    public String getAt035() {
+        return at035;
     }
 
-    public void setMinutes(String minutes) {
-        this.minutes = minutes;
+    public void setAt035(String at035) {
+        this.at035 = at035;
     }
 
-    public String getAmpm() {
-        return ampm;
+    public String getAt036() {
+        return at036;
     }
 
-    public void setAmpm(String ampm) {
-        this.ampm = ampm;
+    public void setAt036(String at036) {
+        this.at036 = at036;
     }
 
-    public String getCountry() {
-        return country;
+    public String getAt037() {
+        return at037;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setAt037(String at037) {
+        this.at037 = at037;
     }
 
-    public String getState() {
-        return state;
+    public String getAt038() {
+        return at038;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setAt038(String at038) {
+        this.at038 = at038;
     }
 
-    public String getCity() {
-        return city;
+    public String getAt039() {
+        return at039;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setAt039(String at039) {
+        this.at039 = at039;
     }
 
-    public String getFatherstatus() {
-        return fatherstatus;
+    public String getAt040() {
+        return at040;
     }
 
-    public void setFatherstatus(String fatherstatus) {
-        this.fatherstatus = fatherstatus;
+    public void setAt040(String at040) {
+        this.at040 = at040;
     }
 
-    public String getMotherstatus() {
-        return motherstatus;
+    public String getAt041() {
+        return at041;
     }
 
-    public void setMotherstatus(String motherstatus) {
-        this.motherstatus = motherstatus;
+    public void setAt041(String at041) {
+        this.at041 = at041;
     }
 
-    public String getNoofbrothers() {
-        return noofbrothers;
+    public String getAt042() {
+        return at042;
     }
 
-    public void setNoofbrothers(String noofbrothers) {
-        this.noofbrothers = noofbrothers;
+    public void setAt042(String at042) {
+        this.at042 = at042;
     }
 
-    public String getNoofsisters() {
-        return noofsisters;
+    public String getAt043() {
+        return at043;
     }
 
-    public void setNoofsisters(String noofsisters) {
-        this.noofsisters = noofsisters;
+    public void setAt043(String at043) {
+        this.at043 = at043;
     }
 
-    public String getFamilylocation() {
-        return familylocation;
+    public String getAt044() {
+        return at044;
     }
 
-    public void setFamilylocation(String familylocation) {
-        this.familylocation = familylocation;
+    public void setAt044(String at044) {
+        this.at044 = at044;
     }
 
-    public String getCountrycode() {
-        return countrycode;
+    public String getAt045() {
+        return at045;
     }
 
-    public void setCountrycode(String countrycode) {
-        this.countrycode = countrycode;
+    public void setAt045(String at045) {
+        this.at045 = at045;
     }
 
-    public long getMobilenumber() {
-        return mobilenumber;
+    public long getAt046() {
+        return at046;
     }
 
-    public void setMobilenumber(long mobilenumber) {
-        this.mobilenumber = mobilenumber;
+    public void setAt046(long at046) {
+        this.at046 = at046;
     }
 
-    public String getAncestralorigin() {
-        return ancestralorigin;
+    public String getAt047() {
+        return at047;
     }
 
-    public void setAncestralorigin(String ancestralorigin) {
-        this.ancestralorigin = ancestralorigin;
+    public void setAt047(String at047) {
+        this.at047 = at047;
     }
 
     @Override
@@ -280,69 +280,62 @@ public class CompleteProfileEntity implements Serializable{
 
         CompleteProfileEntity that = (CompleteProfileEntity) o;
 
-        if (id != that.id) return false;
-        if (mobilenumber != that.mobilenumber) return false;
-        if (bodytype != null ? !bodytype.equals(that.bodytype) : that.bodytype != null) return false;
-        if (weight != null ? !weight.equals(that.weight) : that.weight != null) return false;
-        if (educationInDetail != null ? !educationInDetail.equals(that.educationInDetail) : that.educationInDetail != null)
-            return false;
-        if (occupationInDetail != null ? !occupationInDetail.equals(that.occupationInDetail) : that.occupationInDetail != null)
-            return false;
-        if (eatingHabbit != null ? !eatingHabbit.equals(that.eatingHabbit) : that.eatingHabbit != null) return false;
-        if (drinkingHabbit != null ? !drinkingHabbit.equals(that.drinkingHabbit) : that.drinkingHabbit != null)
-            return false;
-        if (smokingHabbit != null ? !smokingHabbit.equals(that.smokingHabbit) : that.smokingHabbit != null)
-            return false;
-        if (star != null ? !star.equals(that.star) : that.star != null) return false;
-        if (raasi != null ? !raasi.equals(that.raasi) : that.raasi != null) return false;
-        if (hours != null ? !hours.equals(that.hours) : that.hours != null) return false;
-        if (minutes != null ? !minutes.equals(that.minutes) : that.minutes != null) return false;
-        if (ampm != null ? !ampm.equals(that.ampm) : that.ampm != null) return false;
-        if (country != null ? !country.equals(that.country) : that.country != null) return false;
-        if (state != null ? !state.equals(that.state) : that.state != null) return false;
-        if (city != null ? !city.equals(that.city) : that.city != null) return false;
-        if (fatherstatus != null ? !fatherstatus.equals(that.fatherstatus) : that.fatherstatus != null) return false;
-        if (motherstatus != null ? !motherstatus.equals(that.motherstatus) : that.motherstatus != null) return false;
-        if (noofbrothers != null ? !noofbrothers.equals(that.noofbrothers) : that.noofbrothers != null) return false;
-        if (noofbrothersmarried != null ? !noofbrothersmarried.equals(that.noofbrothersmarried) : that.noofbrothersmarried != null)
-            return false;
-        if (noofsisters != null ? !noofsisters.equals(that.noofsisters) : that.noofsisters != null) return false;
-        if (noofsistersmarried != null ? !noofsistersmarried.equals(that.noofsistersmarried) : that.noofsistersmarried != null)
-            return false;
-        if (familylocation != null ? !familylocation.equals(that.familylocation) : that.familylocation != null)
-            return false;
-        if (countrycode != null ? !countrycode.equals(that.countrycode) : that.countrycode != null) return false;
-        return ancestralorigin != null ? ancestralorigin.equals(that.ancestralorigin) : that.ancestralorigin == null;
+        if (at000 != that.at000) return false;
+        if (at046 != that.at046) return false;
+        if (at023 != null ? !at023.equals(that.at023) : that.at023 != null) return false;
+        if (at024 != null ? !at024.equals(that.at024) : that.at024 != null) return false;
+        if (at025 != null ? !at025.equals(that.at025) : that.at025 != null) return false;
+        if (at026 != null ? !at026.equals(that.at026) : that.at026 != null) return false;
+        if (at027 != null ? !at027.equals(that.at027) : that.at027 != null) return false;
+        if (at028 != null ? !at028.equals(that.at028) : that.at028 != null) return false;
+        if (at029 != null ? !at029.equals(that.at029) : that.at029 != null) return false;
+        if (at030 != null ? !at030.equals(that.at030) : that.at030 != null) return false;
+        if (at031 != null ? !at031.equals(that.at031) : that.at031 != null) return false;
+        if (at032 != null ? !at032.equals(that.at032) : that.at032 != null) return false;
+        if (at033 != null ? !at033.equals(that.at033) : that.at033 != null) return false;
+        if (at034 != null ? !at034.equals(that.at034) : that.at034 != null) return false;
+        if (at035 != null ? !at035.equals(that.at035) : that.at035 != null) return false;
+        if (at036 != null ? !at036.equals(that.at036) : that.at036 != null) return false;
+        if (at037 != null ? !at037.equals(that.at037) : that.at037 != null) return false;
+        if (at038 != null ? !at038.equals(that.at038) : that.at038 != null) return false;
+        if (at039 != null ? !at039.equals(that.at039) : that.at039 != null) return false;
+        if (at040 != null ? !at040.equals(that.at040) : that.at040 != null) return false;
+        if (at041 != null ? !at041.equals(that.at041) : that.at041 != null) return false;
+        if (at042 != null ? !at042.equals(that.at042) : that.at042 != null) return false;
+        if (at043 != null ? !at043.equals(that.at043) : that.at043 != null) return false;
+        if (at044 != null ? !at044.equals(that.at044) : that.at044 != null) return false;
+        if (at045 != null ? !at045.equals(that.at045) : that.at045 != null) return false;
+        return at047 != null ? at047.equals(that.at047) : that.at047 == null;
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + (bodytype != null ? bodytype.hashCode() : 0);
-        result = 31 * result + (weight != null ? weight.hashCode() : 0);
-        result = 31 * result + (educationInDetail != null ? educationInDetail.hashCode() : 0);
-        result = 31 * result + (occupationInDetail != null ? occupationInDetail.hashCode() : 0);
-        result = 31 * result + (eatingHabbit != null ? eatingHabbit.hashCode() : 0);
-        result = 31 * result + (drinkingHabbit != null ? drinkingHabbit.hashCode() : 0);
-        result = 31 * result + (smokingHabbit != null ? smokingHabbit.hashCode() : 0);
-        result = 31 * result + (star != null ? star.hashCode() : 0);
-        result = 31 * result + (raasi != null ? raasi.hashCode() : 0);
-        result = 31 * result + (hours != null ? hours.hashCode() : 0);
-        result = 31 * result + (minutes != null ? minutes.hashCode() : 0);
-        result = 31 * result + (ampm != null ? ampm.hashCode() : 0);
-        result = 31 * result + (country != null ? country.hashCode() : 0);
-        result = 31 * result + (state != null ? state.hashCode() : 0);
-        result = 31 * result + (city != null ? city.hashCode() : 0);
-        result = 31 * result + (fatherstatus != null ? fatherstatus.hashCode() : 0);
-        result = 31 * result + (motherstatus != null ? motherstatus.hashCode() : 0);
-        result = 31 * result + (noofbrothers != null ? noofbrothers.hashCode() : 0);
-        result = 31 * result + (noofbrothersmarried != null ? noofbrothersmarried.hashCode() : 0);
-        result = 31 * result + (noofsisters != null ? noofsisters.hashCode() : 0);
-        result = 31 * result + (noofsistersmarried != null ? noofsistersmarried.hashCode() : 0);
-        result = 31 * result + (familylocation != null ? familylocation.hashCode() : 0);
-        result = 31 * result + (countrycode != null ? countrycode.hashCode() : 0);
-        result = 31 * result + (int) (mobilenumber ^ (mobilenumber >>> 32));
-        result = 31 * result + (ancestralorigin != null ? ancestralorigin.hashCode() : 0);
+        int result = at000;
+        result = 31 * result + (at023 != null ? at023.hashCode() : 0);
+        result = 31 * result + (at024 != null ? at024.hashCode() : 0);
+        result = 31 * result + (at025 != null ? at025.hashCode() : 0);
+        result = 31 * result + (at026 != null ? at026.hashCode() : 0);
+        result = 31 * result + (at027 != null ? at027.hashCode() : 0);
+        result = 31 * result + (at028 != null ? at028.hashCode() : 0);
+        result = 31 * result + (at029 != null ? at029.hashCode() : 0);
+        result = 31 * result + (at030 != null ? at030.hashCode() : 0);
+        result = 31 * result + (at031 != null ? at031.hashCode() : 0);
+        result = 31 * result + (at032 != null ? at032.hashCode() : 0);
+        result = 31 * result + (at033 != null ? at033.hashCode() : 0);
+        result = 31 * result + (at034 != null ? at034.hashCode() : 0);
+        result = 31 * result + (at035 != null ? at035.hashCode() : 0);
+        result = 31 * result + (at036 != null ? at036.hashCode() : 0);
+        result = 31 * result + (at037 != null ? at037.hashCode() : 0);
+        result = 31 * result + (at038 != null ? at038.hashCode() : 0);
+        result = 31 * result + (at039 != null ? at039.hashCode() : 0);
+        result = 31 * result + (at040 != null ? at040.hashCode() : 0);
+        result = 31 * result + (at041 != null ? at041.hashCode() : 0);
+        result = 31 * result + (at042 != null ? at042.hashCode() : 0);
+        result = 31 * result + (at043 != null ? at043.hashCode() : 0);
+        result = 31 * result + (at044 != null ? at044.hashCode() : 0);
+        result = 31 * result + (at045 != null ? at045.hashCode() : 0);
+        result = 31 * result + (int) (at046 ^ (at046 >>> 32));
+        result = 31 * result + (at047 != null ? at047.hashCode() : 0);
         return result;
     }
 }

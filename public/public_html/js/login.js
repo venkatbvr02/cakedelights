@@ -4,19 +4,23 @@
  * and open the template in the editor.
  */
 var login={};
+$body = $("body");
 //alert("coming here");
 function submitlogindetails() {
 
     if (dovalidation()) {
         // alert("coming here too");
         // alert(JSON.stringify(login));
+        $body.addClass("loading");
         $.ajax({
-            url: baseurl+ "/login",
+            url: baseurl+ "/srv002",
             method: "POST",
             contentType: 'application/json',
             data: JSON.stringify(login),
             crossDomain: true,
             success: function (data) {
+
+                $body.removeClass("loading");
                 alert(data);
                 window.location.href=baseurl+"/assets/public_html/index.html";
             }
@@ -41,9 +45,10 @@ function dovalidation() {
          return false;
     }
     else {
-        login["username"]=username;
+        login["at001"]=username;
     }
-    //for password
+
+  //  for password
     var password=getTextValue("password");
     if(password==null||password=="")
     {
@@ -52,7 +57,7 @@ function dovalidation() {
     }
     else
     {
-        login["password"]=password;
+        login["at002"]=password;
     }
     return true;
 }

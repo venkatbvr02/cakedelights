@@ -22,11 +22,13 @@ import java.util.List;
 public class LoginDaoImpl implements LoginDao {
     LoginEntity loginEntity=new LoginEntity();
    // private static final String crequuer="select rd.username,rd.password from registrationdetails as rd where rd.username=:username and rd.password=:password";
+   @Inject
+   RegistrationdetailsEntity registrationdetailsEntity;
+
     @Override
     @javax.transaction.Transactional
     public String checkLoginDetails(LoginEntity loginEntity) {
         String result="";
-        //RegistrationdetailsEntity registrationdetailsEntity;
         HibernateUtils hibernateUtils=HibernateUtils.getInstance();
         SessionFactory sessionFactory = hibernateUtils.getSessionFactory();
         Session session = sessionFactory.openSession();
@@ -34,23 +36,28 @@ public class LoginDaoImpl implements LoginDao {
        // String result="";
         try {
 
-            String username = loginEntity.getUsername();
-            String password = loginEntity.getPassword();
+            String username = loginEntity.getAt001();
+            String password = loginEntity.getAt002();
+            String email=loginEntity.getAt003();
+            String profileId=loginEntity.getAtp000();
             //final String LoginCheck="Select username,password from registrationdetails where username=username and password=password";
                       Transaction tx = session.beginTransaction();
                       
             Criteria cr = session.createCriteria(RegistrationdetailsEntity.class);
-
             cr.add(Restrictions.eq("username", username));
             List<RegistrationdetailsEntity> results = cr.list();
+            System.out.println(results);
             Iterator<RegistrationdetailsEntity> iterator=results.listIterator();
               while ((iterator.hasNext())) {
                   //System.out.println(results.get(1)+""+results.get(2));
                                            RegistrationdetailsEntity registrationdetailsEntity1=iterator.next();
-                  System.out.println(":::::::::::::::::::::::: "+ PasswordHashing.check(password,registrationdetailsEntity1.getPassword()));
-                  System.out.println("actual password "+password+" ::::: "+registrationdetailsEntity1.getPassword());
-
-                  if (registrationdetailsEntity1.getUsername().equals(username)&&PasswordHashing.check(password,registrationdetailsEntity1.getPassword())) {
+                  System.out.println(registrationdetailsEntity1.getAt003());
+                  System.out.println(":::::::::::::::::::::::: "+ PasswordHashing.check(password,registrationdetailsEntity1.getAt002()));
+                  System.out.println("actual password "+password+" ::::: "+registrationdetailsEntity1.getAt002());
+                  System.out.println("email is"+registrationdetailsEntity1.getAt003()+"profile id"+registrationdetailsEntity1.getAtp000());
+                 String emname=registrationdetailsEntity1.getAt003();
+                 String pfid=registrationdetailsEntity1.getAtp000();
+                  if (registrationdetailsEntity1.getAt001().equals(username)&&PasswordHashing.check(password,registrationdetailsEntity1.getAt002())) {
                       result = "Success";
                       System.out.println("Login Success");
                       //return result;

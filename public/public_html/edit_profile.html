@@ -25,6 +25,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/flexslider.min.css" rel="stylesheet" />
         <!--<link rel="shortcut icon" href="http://example.com/myicon.ico" />-->
         <!----font-Awesome----->
+        <link href="css/ajaxloadergif.css" rel="stylesheet">
 
     </head>
     <body>
@@ -134,11 +135,57 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </label>
                     </div>
                     <br/>
-                    <div class="row">
-                        <label class="col-md-4">Height * </label>
-                        <input type="text" name="height" id="height" class="col-lg-6"/>
+
+                    <div class="form_but1">
+                        <label class="col-md-4" for="height" >Height : </label>
+                        <div class="col-md-4 form_radios">
+                            <div class="select-block1">
+                                <select id="height" name="height" onchange="getDropdownValue(height);">
+                                    <option value="0">height</option>
+                                    <option value="4ft 6in">4ft 6in</option>
+                                    <option value="4ft 7in">4ft 7in</option>
+                                    <option value="4ft 8in">4ft 8in</option>
+                                    <option value="4ft 9in">4ft 9in</option>
+                                    <option value="4ft 10in">4ft 10in</option>
+                                    <option value="4ft 11in">4ft 11in</option>
+                                    <option value="5ft">5ft</option>
+                                    <option value="5ft 1in">5ft 1in</option>
+                                    <option value="5ft 2in">5ft 2in </option>
+                                    <option value="5ft 3in">5ft 3in</option>
+                                    <option value="5ft 4in">5ft 4in</option>
+                                    <option value="5ft 5in">5ft 5in</option>
+                                    <option value="5ft 6in">5ft 6in</option>
+                                    <option value="5ft 7in">5ft 7in</option>
+                                    <option value="5ft 8in">5ft 8in</option>
+                                    <option value="5ft 9in">5ft 9in</option>
+                                    <option value="5ft 10in">5ft 10in</option>
+                                    <option value="5ft 11in">5ft 11in</option>
+                                    <option value="6ft">6ft</option>
+                                    <option value="6ft 1in">6ft 1in</option>
+                                    <option value="6ft 2in">6ft 2in</option>
+                                    <option value="6ft 3in">6ft 3in</option>
+                                    <option value="6ft 4in">6ft 4in</option>
+                                    <option value="6ft 5in">6ft 5in</option>
+                                    <option value="6ft 6in">6ft 6in</option>
+                                    <option value="6ft 7in">6ft 7in</option>
+                                    <option value="6ft 8in">6ft 8in</option>
+                                    <option value="6ft 9in">6ft 9in</option>
+                                    <option value="6ft 10in">6ft 10in</option>
+                                    <option value="6ft 11in">6ft 11in</option>
+                                    <option value="7ft">7ft</option>
+
+                                </select>
+                            </div>
+                        </div>
+
                     </div>
                     <br/>
+                    <!--<br/>-->
+                    <!--<div class="row">-->
+                        <!--<label class="col-md-4">Height * </label>-->
+                        <!--<input type="text" name="height" id="height" class="col-lg-6"/>-->
+                    <!--</div>-->
+                    <!--<br/>-->
                     <div class="row">
                         <label class="col-md-4">Family Status *</label>
                         <label for="radio-01" class="label_radio">
@@ -416,6 +463,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     controlNav: "thumbnails"
                                 });
                             });
-        </script>   
+        </script>
+        <div class="gifloader" id="loadinggif"></div>
     </body>
 </html>	

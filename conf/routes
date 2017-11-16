@@ -7,7 +7,7 @@ GET     /                           controllers.Application.index
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
-POST     /register                   controllers.Application.register
-POST     /login                      controllers.Application.login
-POST     /edit                       controllers.EditProfileController.edit
-POST     /completeprofile            controllers.CompleteProfileController.completeprofile
+POST     /srv001                   controllers.Application.srv001
+POST     /srv002                      controllers.Application.srv002
+POST     /srv003                       controllers.EditProfileController.srv003
+POST     /srv004            controllers.CompleteProfileController.srv004

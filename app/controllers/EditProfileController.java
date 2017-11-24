@@ -5,13 +5,18 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
+import com.srujanika.utils.PropertiesUtil;
+import org.apache.commons.io.FileUtils;
 import play.api.libs.json.Json;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
+import play.mvc.Http;
 import play.mvc.Result;
 import serviceImpl.EditProfileServiceImpl;
 
 import javax.inject.Inject;
+import java.io.File;
+import java.io.IOException;
 
 public class EditProfileController extends Controller {
     @Inject
@@ -33,36 +38,21 @@ public class EditProfileController extends Controller {
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-
-
-        // jsonNode.findValues("datas");
-      //  EditProfileEntity editProfileEntity=new EditProfileEntity()();
-        //editProfileEntity.setMaritalStatus(jsonNode.get(maritalstatus));
-
         System.out.println("::::::::::::::: :::"+jsonNode.get("height"));
         System.out.println("::::::::::::::: :::"+jsonNode.asText());
         response().setHeader("Access-Control-Allow-Origin", "*");
-//        editProfileService.editProfileDetails(editProfileEntity);
-
-      //  System.out.println(jsonNode.asText());
-       // editProfileService.editProfileDetails(editProfileEntity);
-//        editProfileEntity.setMaritalStatus("Never Married");
-//        editProfileEntity.setHeight(5.5);
-//        editProfileEntity.setFamilyStatus("Middle class");
-//        editProfileEntity.setFamilyType("joint");
-//        editProfileEntity.setFamilyValues("liberal");
-//        editProfileEntity.setAnyDisability("Noraml");
-//        editProfileEntity.setCaste("OC");
-//        editProfileEntity.setSubCaste("Kamma");
-//        editProfileEntity.setGothram("chinthpella");
-//        editProfileEntity.setDosham("NO");
-//        editProfileEntity.setHigherEducation("MCA");
-//        editProfileEntity.setEmployedIn("SRUJANIKA");
-//        editProfileEntity.setOccupation("SOFTWARE ENGINEER");
-//        editProfileEntity.setIncome(20000);
-//        editProfileEntity.setAboutMe("I am currently working for srujanika technologies");
-//        editProfileService.editProfileDetails(editProfileEntity);
       return ok("Values Inserted");
+    }
+
+    public Result uploadimage(){
+        System.out.println("coming here to upload file :::::::::::");
+        Http.MultipartFormData<File> body= request().body().asMultipartFormData();
+
+        String result=editProfileService.uploadProFile(body);
+
+        return ok(result);
+
+
     }
 
 }

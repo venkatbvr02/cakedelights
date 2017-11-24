@@ -26,20 +26,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <link href="css/add_profilepic.css" rel="stylesheet"/>
         <!--<link rel="shortcut icon" href="http://example.com/myicon.ico" />-->
         <!----font-Awesome----->
-        <script>
-            $(document).ready(function () {
-                $(".dropdown").hover(
-                        function () {
-                            $('.dropdown-menu', this).stop(true, true).slideDown("fast");
-                            $(this).toggleClass('open');
-                        },
-                        function () {
-                            $('.dropdown-menu', this).stop(true, true).slideUp("fast");
-                            $(this).toggleClass('open');
-                        }
-                );
-            });
-        </script>
+
     </head>
     <body>
         <!-- ============================  Navigation Start =========================== -->
@@ -134,6 +121,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <p>
                             Add  minimum a photo to ensure your profile gets featured on top of the search results.
                         </p>
+
                         <div class="row">
                             <div class="col-md-6">
                                 <img class="profile-pic" src="http://www.libertyspecialtymarkets.com/wp-content/uploads/2017/01/profile-default.jpg"  alt="Upload Profile Pic"/>
@@ -141,20 +129,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <div class="col-md-1"></div>
                             <div class="col-md-5">
                                 <div class="upload-button"><input type="button" class="btn btn-warning" value=" Upload Image "/></div>
-                                <input class="file-upload" id="imageinput" name="imageinput" type="file" accept="image/*"/>
+                                <input class="file-upload" id="profilePicture" name="profilePicture" type="file" accept="image/*"/>
                                 <hr/>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6"></div>
                             <div class="col-md-3">
-                                <button class="btn btn-info pull-right" id="nextbutton" onclick="saveimage();">Next</button>
+                                <button class="btn btn-info pull-right" id="nextbutton"  name="nextbutton" >Next</button>
                             </div>
                             <div class="col-md-3">
                                 <button class="btn btn-default pull-right" id='illdothislater' ><font color='#39b3d7'>I'll do this later ></font></button>&nbsp;&nbsp;&nbsp;
                             </div>
 
                         </div>
+
+
                     </div>
                     <div class="clearfix"> </div>
                     <div class="copy">
@@ -206,20 +196,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </div>
                 </div>-->
         <!-- FlexSlider -->
-        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/jquery.flexslider.js"></script>
 
-        <!--<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />-->
-        <script src="js/edit_profile.js" type="text/javascript"></script>
-        <script src="js/add_profilepic.js" type="text/javascript"></script>
-        <script>
-            // Can also be used with $(document).ready()
-            $(document).ready(function () {
-                $('.flexslider').flexslider({
-                    animation: "slide",
-                    controlNav: "thumbnails"
-                });
-            });
-        </script>   
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
 
@@ -241,9 +218,54 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
             </div>
         </div>
+        <script src="js/baseurl.js"></script>
         <script src="js/jquery.min.js"></script>
+
         <script src="js/bootstrap.min.js"></script>
-        <script src="js/add_profilepic.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/jquery.flexslider.js"></script>
+
+        <!--<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />-->
+        <script src="js/validation.js" type="text/javascript"></script>
+
+        <script src="js/add_profilepic.js" type="text/javascript"></script>
+        <script>
+            // Can also be used with $(document).ready()
+            $(document).ready(function () {
+                $('.flexslider').flexslider({
+                    animation: "slide",
+                    controlNav: "thumbnails"
+                });
+                         $(".dropdown").hover(
+                    function () {
+                        $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                        $(this).toggleClass('open');
+                    },
+                    function () {
+                        $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                        $(this).toggleClass('open');
+                    }
+                );
+            });
+        </script>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="modaltitle">Select Dosham Type</h4>
+                    </div>
+                    <div class="modal-body" id="modalbody">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
     </body>
 </html>	

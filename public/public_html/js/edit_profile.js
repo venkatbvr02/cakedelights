@@ -188,21 +188,7 @@ function dovalidation() {
 //    var
     return true;
 }
-function showAlert(modaltitle, modalbody) {
 
-    $('#modalbody').empty();
-    $('#modaltitle').empty();
-    $('#modaltitle').append(modaltitle);
-    $('#modalbody').append(modalbody);
-    $('#myModal').modal('show');
-
-    return;
-}
-
-function dataclose() {
-    $('#modalbody').empty();
-    $('#modaltitle').empty();
-}
 function gettextValue(fieldName) {
     var _result;
     try {

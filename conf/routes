@@ -11,3 +11,4 @@ POST     /srv001                   controllers.Application.srv001
 POST     /srv002                      controllers.Application.srv002
 POST     /srv003                       controllers.EditProfileController.srv003
 POST     /srv004            controllers.CompleteProfileController.srv004
+POST    /srv006              controllers.EditProfileController.uploadimage

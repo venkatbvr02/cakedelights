@@ -89,7 +89,9 @@ libraryDependencies ++= Seq(
   "org.apache.commons" % "commons-math3" % "3.6.1",
   "org.ehcache" % "ehcache" % "3.4.0",
   "org.ehcache" % "ehcache-clustered" % "3.4.0",
-  "org.springframework" % "spring-oxm" % "4.3.9.RELEASE"
+  "org.springframework" % "spring-oxm" % "4.3.9.RELEASE",
+  "org.apache.commons" % "commons-io" % "1.3.2"
+
 )
 //libraryDependencies += "tv.cntt" % "xitrum-hazelcast3" % "1.14.0"
 //libraryDependencies += "com.hazelcast" %  "hazelcast"         % "3.7.5"

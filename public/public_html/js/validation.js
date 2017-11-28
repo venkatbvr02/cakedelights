@@ -41,6 +41,7 @@ function getDropdownValue(selectedvalue) {
 return _result;
 }
 
+// <<<<<<< HEAD
 function setradioValue(groupName,fieldValue){
     $("input[name="+groupName+"]").val([fieldValue]);
 }
@@ -48,5 +49,22 @@ function  setSelectValue(groupName,fieldValue) {
     $( "#"+groupName ).val(fieldValue);
 }
 function  setTextValue(groupName,fieldValue) {
-    $( "#"+groupName ).val(fieldValue);
+    $("#" + groupName).val(fieldValue);
 }
+
+        function showAlert(modaltitle, modalbody) {
+
+            $('#modalbody').empty();
+            $('#modaltitle').empty();
+            $('#modaltitle').append(modaltitle);
+            $('#modalbody').append(modalbody);
+            $('#myModal').modal('show');
+
+            return;
+        }
+
+    function dataclose() {
+        $('#modalbody').empty();
+        $('#modaltitle').empty();
+
+    }

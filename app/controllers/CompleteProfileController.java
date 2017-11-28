@@ -4,8 +4,10 @@ import Entity.CompleteProfileEntity;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.asynchttpclient.Request;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
+import play.mvc.Http;
 import play.mvc.Result;
 import serviceImpl.CompleteProfileServiceImpl;
 
@@ -17,9 +19,8 @@ public class CompleteProfileController extends Controller {
     @BodyParser.Of(BodyParser.Json.class)
     public Result srv004()
     {
-
         JsonNode jsonNode=request().body().asJson();
-        System.out.println("coming here ;;;;;;; "+jsonNode.get("bodytype"));
+        //System.out.println("coming here ;;;;;;; "+jsonNode.get("bodytype"));
         ObjectMapper objectMapper=new ObjectMapper();
         try
         {
@@ -31,8 +32,9 @@ public class CompleteProfileController extends Controller {
         catch (JsonProcessingException e)
         {
             e.printStackTrace();
+            return ok("profile Unsuccessfull");
         }
-        return ok("klvnfdklvnlk");
+        return ok("profile success");
     }
 
 }

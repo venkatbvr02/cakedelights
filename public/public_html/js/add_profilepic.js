@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-
     var readURL = function (input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -10,23 +9,24 @@ $(document).ready(function () {
             };
 
             reader.readAsDataURL(input.files[0]);
-           
+
         }
     };
-//$('#imageinput').change(function(){
-function saveimage() {
+$('#nextbutton').change(function(){
+//function saveimage() {
 
-    var frm = new FormData();
+    var frm = new FormData($('form').get(0));
     frm.append('imageInput', input.files[0]);
     $.ajax({
+        url:baseurl+"/srv006",
         method: 'POST',
-        address: 'E:\\profileimages',
+       // address: 'E:\\profileimages',
         data: frm,
         contentType: false,
         processData: false,
         cache: false
     });
-}
+});
 
     $(".file-upload").on('change', function () {
         readURL(this);

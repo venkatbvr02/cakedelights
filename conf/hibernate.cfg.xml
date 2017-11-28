@@ -23,7 +23,8 @@
         <!--<property name="hibernate.c3p0.idle_test_period">3000</property>-->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <mapping class="Entity.RegistrationdetailsEntity"/>
-        <mapping class="Entity.EditProfileEntity"/>
+        <!--<mapping class="Entity.EditProfileEntity"/>-->
         <mapping class="Entity.CompleteProfileEntity"/>
+        <mapping class="Entity.LoginActivity"/>
     </session-factory>
 </hibernate-configuration>

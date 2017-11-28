@@ -40,3 +40,13 @@ function getDropdownValue(selectedvalue) {
 
 return _result;
 }
+
+function setradioValue(groupName,fieldValue){
+    $("input[name="+groupName+"]").val([fieldValue]);
+}
+function  setSelectValue(groupName,fieldValue) {
+    $( "#"+groupName ).val(fieldValue);
+}
+function  setTextValue(groupName,fieldValue) {
+    $( "#"+groupName ).val(fieldValue);
+}

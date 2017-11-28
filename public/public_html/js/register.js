@@ -16,7 +16,7 @@ $('#regsister_submit').click(function () {
                 $body.removeClass("loading");
 
                 if(data==":registration sucess") {
-                    window.location.href = baseurl + "/assets/public_html/edit_profile.html";
+                    window.location.href = baseurl + "/assets/public_html/complete_profile.html";
                 }
             }
         });

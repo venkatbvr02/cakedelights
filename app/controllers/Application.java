@@ -29,6 +29,7 @@ public class Application extends Controller {
     LoginServiceImpl loginService;
 
     public Result index() {
+
       // return ok(index.render("Your new application is ready."));
         return redirect("/assets/public_html/index.html");
     }
@@ -55,6 +56,7 @@ public class Application extends Controller {
             return ok(":registration unsucessful");
 
         }
+        session("profileId",registrationdetailsEntity.getAtp000());
         return ok(":registration sucess");
     }
 
@@ -77,6 +79,8 @@ public Result srv002() {
     {
         e.printStackTrace();
     }
+    session("profileId",loginEntity.getAtp000());
+
     return ok(result);
 }
 

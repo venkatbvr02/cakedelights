@@ -16,20 +16,30 @@ function submitlogindetails() {
             url: baseurl+ "/srv002",
             method: "POST",
             contentType: 'application/json',
+            header:'sessionid=101',
             data: JSON.stringify(login),
             crossDomain: true,
             success: function (data) {
 
                 $body.removeClass("loading");
-                alert(data);
-                window.location.href=baseurl+"/assets/public_html/index.html";
+                if(data==""||data==undefined||data=="failure")
+                {
+                    alert("login failed");
+                    window.location.href=baseurl+"/assets/public_html/login.html";
+
+                }
+                else {
+                    alert(data);
+                    window.location.href = baseurl + "/assets/public_html/index.html";
+                }
             }
         });
     }
 }
-    function setHeader(xhr) {
+    function setHeader(xhr,sessionId) {
         xhr.setRequestHeader('Access-Control-Allow-Origin: *');
-    }
+        sessionId=101;
+}
 
 
 

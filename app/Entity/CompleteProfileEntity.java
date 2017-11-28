@@ -1,19 +1,54 @@
 package Entity;
 
+import org.hibernate.annotations.GenericGenerator;
 import play.libs.Time;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Table(name="completeprofiledetails", schema="matrimony")
 public class CompleteProfileEntity implements Serializable{
-    @Id
+
     @Column(name="at000", nullable = false)
     public int at000;
+    @Id
+    @GenericGenerator(name = "sequence_profile_id", strategy = "Entity.ProfileIdGenerator")
+    @GeneratedValue(generator = "sequence_profile_id")
+    @Column(name = "atp000", nullable = false)
+    public String atp000;
+    @Column(name = "at007")
+    public String at007;
+    @Column(name="at008")
+    public String at008;
+    @Column(name="at009")
+    public String at009;
+    @Column(name="at010")
+    public String at010;
+    @Column(name="at011")
+    public String at011;
+    @Column(name="at012")
+    public String at012;
+    @Column(name="at013")
+    public String at013;
+    @Column(name = "at014")
+    public String at014;
+    @Column(name="at015")
+    public String at015;
+    @Column(name="at016")
+    public String at016;
+    @Column(name="at017")
+    public String at017;
+    @Column(name="at018")
+    public String at018;
+    @Column(name="at019")
+    public String at019;
+    @Column(name="at020")
+    public int at020;
+    @Column(name="at021")
+    public String at021;
+    @Column(name="at022")
+    public String at022;
     @Column(name = "at023",nullable = false)
     public String at023;
     @Column(name = "at024",nullable = false)
@@ -34,10 +69,6 @@ public class CompleteProfileEntity implements Serializable{
     public String at031;
     @Column(name = "at032",nullable = false)
     public String at032;
-    @Column(name = "at033",nullable = false)
-    public String at033;
-    @Column(name = "at034",nullable = false)
-    public String at034;
     @Column(name = "at035",nullable = false)
     public String at035;
     @Column(name = "at036",nullable = false)
@@ -64,6 +95,9 @@ public class CompleteProfileEntity implements Serializable{
     public long at046;
     @Column(name = "at047",nullable = false)
     public String at047;
+    @OneToOne(cascade =CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    public RegistrationdetailsEntity registrationdetailsEntity;
 
     public int getAt000() {
         return at000;
@@ -71,6 +105,142 @@ public class CompleteProfileEntity implements Serializable{
 
     public void setAt000(int at000) {
         this.at000 = at000;
+    }
+
+    public String getAtp000() {
+        return atp000;
+    }
+
+    public void setAtp000(String atp000) {
+        this.atp000 = atp000;
+    }
+
+    public String getAt007() {
+        return at007;
+    }
+
+    public void setAt007(String at007) {
+        this.at007 = at007;
+    }
+
+    public String getAt008() {
+        return at008;
+    }
+
+    public void setAt008(String at008) {
+        this.at008 = at008;
+    }
+
+    public String getAt009() {
+        return at009;
+    }
+
+    public void setAt009(String at009) {
+        this.at009 = at009;
+    }
+
+    public String getAt010() {
+        return at010;
+    }
+
+    public void setAt010(String at010) {
+        this.at010 = at010;
+    }
+
+    public String getAt011() {
+        return at011;
+    }
+
+    public void setAt011(String at011) {
+        this.at011 = at011;
+    }
+
+    public String getAt012() {
+        return at012;
+    }
+
+    public void setAt012(String at012) {
+        this.at012 = at012;
+    }
+
+    public String getAt013() {
+        return at013;
+    }
+
+    public void setAt013(String at013) {
+        this.at013 = at013;
+    }
+
+    public String getAt014() {
+        return at014;
+    }
+
+    public void setAt014(String at014) {
+        this.at014 = at014;
+    }
+
+    public String getAt015() {
+        return at015;
+    }
+
+    public void setAt015(String at015) {
+        this.at015 = at015;
+    }
+
+    public String getAt016() {
+        return at016;
+    }
+
+    public void setAt016(String at016) {
+        this.at016 = at016;
+    }
+
+    public String getAt017() {
+        return at017;
+    }
+
+    public void setAt017(String at017) {
+        this.at017 = at017;
+    }
+
+    public String getAt018() {
+        return at018;
+    }
+
+    public void setAt018(String at018) {
+        this.at018 = at018;
+    }
+
+    public String getAt019() {
+        return at019;
+    }
+
+    public void setAt019(String at019) {
+        this.at019 = at019;
+    }
+
+    public int getAt020() {
+        return at020;
+    }
+
+    public void setAt020(int at020) {
+        this.at020 = at020;
+    }
+
+    public String getAt021() {
+        return at021;
+    }
+
+    public void setAt021(String at021) {
+        this.at021 = at021;
+    }
+
+    public String getAt022() {
+        return at022;
+    }
+
+    public void setAt022(String at022) {
+        this.at022 = at022;
     }
 
     public String getAt023() {
@@ -151,22 +321,6 @@ public class CompleteProfileEntity implements Serializable{
 
     public void setAt032(String at032) {
         this.at032 = at032;
-    }
-
-    public String getAt033() {
-        return at033;
-    }
-
-    public void setAt033(String at033) {
-        this.at033 = at033;
-    }
-
-    public String getAt034() {
-        return at034;
-    }
-
-    public void setAt034(String at034) {
-        this.at034 = at034;
     }
 
     public String getAt035() {
@@ -273,69 +427,58 @@ public class CompleteProfileEntity implements Serializable{
         this.at047 = at047;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    public RegistrationdetailsEntity getRegistrationdetailsEntity() {
+        return registrationdetailsEntity;
+    }
 
-        CompleteProfileEntity that = (CompleteProfileEntity) o;
-
-        if (at000 != that.at000) return false;
-        if (at046 != that.at046) return false;
-        if (at023 != null ? !at023.equals(that.at023) : that.at023 != null) return false;
-        if (at024 != null ? !at024.equals(that.at024) : that.at024 != null) return false;
-        if (at025 != null ? !at025.equals(that.at025) : that.at025 != null) return false;
-        if (at026 != null ? !at026.equals(that.at026) : that.at026 != null) return false;
-        if (at027 != null ? !at027.equals(that.at027) : that.at027 != null) return false;
-        if (at028 != null ? !at028.equals(that.at028) : that.at028 != null) return false;
-        if (at029 != null ? !at029.equals(that.at029) : that.at029 != null) return false;
-        if (at030 != null ? !at030.equals(that.at030) : that.at030 != null) return false;
-        if (at031 != null ? !at031.equals(that.at031) : that.at031 != null) return false;
-        if (at032 != null ? !at032.equals(that.at032) : that.at032 != null) return false;
-        if (at033 != null ? !at033.equals(that.at033) : that.at033 != null) return false;
-        if (at034 != null ? !at034.equals(that.at034) : that.at034 != null) return false;
-        if (at035 != null ? !at035.equals(that.at035) : that.at035 != null) return false;
-        if (at036 != null ? !at036.equals(that.at036) : that.at036 != null) return false;
-        if (at037 != null ? !at037.equals(that.at037) : that.at037 != null) return false;
-        if (at038 != null ? !at038.equals(that.at038) : that.at038 != null) return false;
-        if (at039 != null ? !at039.equals(that.at039) : that.at039 != null) return false;
-        if (at040 != null ? !at040.equals(that.at040) : that.at040 != null) return false;
-        if (at041 != null ? !at041.equals(that.at041) : that.at041 != null) return false;
-        if (at042 != null ? !at042.equals(that.at042) : that.at042 != null) return false;
-        if (at043 != null ? !at043.equals(that.at043) : that.at043 != null) return false;
-        if (at044 != null ? !at044.equals(that.at044) : that.at044 != null) return false;
-        if (at045 != null ? !at045.equals(that.at045) : that.at045 != null) return false;
-        return at047 != null ? at047.equals(that.at047) : that.at047 == null;
+    public void setRegistrationdetailsEntity(RegistrationdetailsEntity registrationdetailsEntity) {
+        this.registrationdetailsEntity = registrationdetailsEntity;
     }
 
     @Override
-    public int hashCode() {
-        int result = at000;
-        result = 31 * result + (at023 != null ? at023.hashCode() : 0);
-        result = 31 * result + (at024 != null ? at024.hashCode() : 0);
-        result = 31 * result + (at025 != null ? at025.hashCode() : 0);
-        result = 31 * result + (at026 != null ? at026.hashCode() : 0);
-        result = 31 * result + (at027 != null ? at027.hashCode() : 0);
-        result = 31 * result + (at028 != null ? at028.hashCode() : 0);
-        result = 31 * result + (at029 != null ? at029.hashCode() : 0);
-        result = 31 * result + (at030 != null ? at030.hashCode() : 0);
-        result = 31 * result + (at031 != null ? at031.hashCode() : 0);
-        result = 31 * result + (at032 != null ? at032.hashCode() : 0);
-        result = 31 * result + (at033 != null ? at033.hashCode() : 0);
-        result = 31 * result + (at034 != null ? at034.hashCode() : 0);
-        result = 31 * result + (at035 != null ? at035.hashCode() : 0);
-        result = 31 * result + (at036 != null ? at036.hashCode() : 0);
-        result = 31 * result + (at037 != null ? at037.hashCode() : 0);
-        result = 31 * result + (at038 != null ? at038.hashCode() : 0);
-        result = 31 * result + (at039 != null ? at039.hashCode() : 0);
-        result = 31 * result + (at040 != null ? at040.hashCode() : 0);
-        result = 31 * result + (at041 != null ? at041.hashCode() : 0);
-        result = 31 * result + (at042 != null ? at042.hashCode() : 0);
-        result = 31 * result + (at043 != null ? at043.hashCode() : 0);
-        result = 31 * result + (at044 != null ? at044.hashCode() : 0);
-        result = 31 * result + (at045 != null ? at045.hashCode() : 0);
-        result = 31 * result + (int) (at046 ^ (at046 >>> 32));
-        result = 31 * result + (at047 != null ? at047.hashCode() : 0);
-        return result;
+    public String toString() {
+        return "CompleteProfileEntity{" +
+                "at000=" + at000 +
+                ", atp000='" + atp000 + '\'' +
+                ", at007='" + at007 + '\'' +
+                ", at008='" + at008 + '\'' +
+                ", at009='" + at009 + '\'' +
+                ", at010='" + at010 + '\'' +
+                ", at011='" + at011 + '\'' +
+                ", at012='" + at012 + '\'' +
+                ", at013='" + at013 + '\'' +
+                ", at014='" + at014 + '\'' +
+                ", at015='" + at015 + '\'' +
+                ", at016='" + at016 + '\'' +
+                ", at017='" + at017 + '\'' +
+                ", at018='" + at018 + '\'' +
+                ", at019='" + at019 + '\'' +
+                ", at020=" + at020 +
+                ", at021='" + at021 + '\'' +
+                ", at022='" + at022 + '\'' +
+                ", at023='" + at023 + '\'' +
+                ", at024='" + at024 + '\'' +
+                ", at025='" + at025 + '\'' +
+                ", at026='" + at026 + '\'' +
+                ", at027='" + at027 + '\'' +
+                ", at028='" + at028 + '\'' +
+                ", at029='" + at029 + '\'' +
+                ", at030='" + at030 + '\'' +
+                ", at031='" + at031 + '\'' +
+                ", at032='" + at032 + '\'' +
+                ", at035='" + at035 + '\'' +
+                ", at036='" + at036 + '\'' +
+                ", at037='" + at037 + '\'' +
+                ", at038='" + at038 + '\'' +
+                ", at039='" + at039 + '\'' +
+                ", at040='" + at040 + '\'' +
+                ", at041='" + at041 + '\'' +
+                ", at042='" + at042 + '\'' +
+                ", at043='" + at043 + '\'' +
+                ", at044='" + at044 + '\'' +
+                ", at045='" + at045 + '\'' +
+                ", at046=" + at046 +
+                ", at047='" + at047 + '\'' +
+                '}';
     }
 }

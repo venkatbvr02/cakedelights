@@ -24,6 +24,7 @@ public class RegistrationdetailsEntity {
     private String at005;
     private String at006;
 
+
     public int getAt000() {
         return at000;
     }

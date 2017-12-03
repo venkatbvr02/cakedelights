@@ -14,8 +14,8 @@ $('#regsister_submit').click(function () {
             crossDomain: true,
             success: function (data) {
                 $body.removeClass("loading");
-
-                if(data==":registration sucess") {
+                alert(data);
+                if(data==":registration success") {
                     window.location.href = baseurl + "/assets/public_html/complete_profile.html";
                 }
             }

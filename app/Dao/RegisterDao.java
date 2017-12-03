@@ -6,7 +6,7 @@ import Entity.RegistrationdetailsEntity;
 //import com.srujanika.daoImpl.RegisterDaoImpl;
 
 public interface RegisterDao {
-    void saveRegisterationDetails(RegistrationdetailsEntity registrationdetailsEntity);
+    String saveRegisterationDetails(RegistrationdetailsEntity registrationdetailsEntity) throws Exception;
 
 
 }

@@ -13,6 +13,8 @@ POST    /srv002                     controllers.Application.srv002
 #POST    /srv003                     controllers.EditProfileController.srv003
 POST    /srv004                     controllers.CompleteProfileController.srv004
 GET     /srv005                     controllers.EditCompleteProfileController.srv005
-POST    /srv006                     controllers.AddProfilePicController.srv006
+POST    /srv006                     controllers.CompleteProfileController.uploadimage
 #GET    /srv007                     controllers.EditEditProfileController.srv007
 POST   /srv008                      controllers.EditCompleteProfileController.editcomplete
+POST    /srv009                     controllers.SearchController.search
+

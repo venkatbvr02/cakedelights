@@ -24,9 +24,16 @@ function completeRegistration() {
             success: function (data) {
                 // alert("Registration Success");
                 // $body.removeClass("loading");
-                //if(data=="profile success")
-                alert(data);
-                window.location.href = baseurl+"/assets/public_html/add_profilepic.html";
+                if(data=="profile success") {
+                    window.location.href = baseurl + "/assets/public_html/add_profilepic.html";
+                }
+                else if(data=="profile Unsuccessfull")
+                {
+                    window.location.href = baseurl + "/assets/public_html/complete_profile.html";
+                }
+                else {
+                    window.location.href = baseurl + "/assets/public_html/complete_profile.html";
+                }
             }
         });
     }
@@ -358,6 +365,24 @@ function dovalidation() {
     }
     else {
         completeprofile["at039"]=motherstatus;
+    }
+    var religion=getDropdownValue("religion");
+    if(religion==null||religion=="")
+    {
+        showAlert("Validation error","Religion Should not be Empty");
+        return false;
+    }
+    else {
+        completeprofile["at048"]=religion;
+    }
+    var mothertongue=getDropdownValue("mothertongue");
+    if(mothertongue==null||mothertongue=="")
+    {
+        showAlert("Validation error","Mother tongue should not be Empty");
+        return false;
+    }
+    else {
+        completeprofile["at049"]=mothertongue;
     }
     var noofbrothers=getDropdownValue("noofbrothers");
     if(noofbrothers==null||noofbrothers=="")

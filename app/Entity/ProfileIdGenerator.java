@@ -21,7 +21,7 @@ public class ProfileIdGenerator implements IdentifierGenerator {
 //    }
 
     @Override
-    public Serializable generate(SharedSessionContractImplementor sharedSessionContractImplementor, Object o) throws HibernateException {
+    public  Serializable generate(SharedSessionContractImplementor sharedSessionContractImplementor, Object o) throws HibernateException {
         String prefix = "SM-";
         Connection connection = sharedSessionContractImplementor.connection();
         System.out.println("Coming here to check all matrimony IDS::::::::::::::::::;");

@@ -7,5 +7,5 @@ import Entity.RegistrationdetailsEntity;
 
 
 public interface RegisterService {
-     void saveRegistrationDetails(RegistrationdetailsEntity registrationdetailsEntity);
+     String saveRegistrationDetails(RegistrationdetailsEntity registrationdetailsEntity) throws Exception;
 }

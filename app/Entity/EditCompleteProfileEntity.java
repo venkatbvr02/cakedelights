@@ -72,6 +72,8 @@ public class EditCompleteProfileEntity implements Serializable {
     public String at038;
 
     public String at039;
+    public String at048;
+    public String at049;
 
     public String at040;
 
@@ -85,7 +87,7 @@ public class EditCompleteProfileEntity implements Serializable {
 
     public String at045;
 
-    public long at046;
+    public String at046;
 
     public String at047;
 
@@ -354,6 +356,22 @@ public class EditCompleteProfileEntity implements Serializable {
         this.at039 = at039;
     }
 
+    public String getAt048() {
+        return at048;
+    }
+
+    public void setAt048(String at048) {
+        this.at048 = at048;
+    }
+
+    public String getAt049() {
+        return at049;
+    }
+
+    public void setAt049(String at049) {
+        this.at049 = at049;
+    }
+
     public String getAt040() {
         return at040;
     }
@@ -402,11 +420,11 @@ public class EditCompleteProfileEntity implements Serializable {
         this.at045 = at045;
     }
 
-    public long getAt046() {
+    public String getAt046() {
         return at046;
     }
 
-    public void setAt046(long at046) {
+    public void setAt046(String at046) {
         this.at046 = at046;
     }
 
@@ -454,6 +472,8 @@ public class EditCompleteProfileEntity implements Serializable {
                 ", at037='" + at037 + '\'' +
                 ", at038='" + at038 + '\'' +
                 ", at039='" + at039 + '\'' +
+                ", at048='" + at048 + '\'' +
+                ", at049='" + at049 + '\'' +
                 ", at040='" + at040 + '\'' +
                 ", at041='" + at041 + '\'' +
                 ", at042='" + at042 + '\'' +

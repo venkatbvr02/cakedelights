@@ -9,12 +9,12 @@ import java.io.Serializable;
 @Entity
 @Table(name="completeprofiledetails", schema="matrimony")
 public class CompleteProfileEntity implements Serializable{
-
+    @Id
     @Column(name="at000", nullable = false)
     public int at000;
-    @Id
-    @GenericGenerator(name = "sequence_profile_id", strategy = "Entity.ProfileIdGenerator")
-    @GeneratedValue(generator = "sequence_profile_id")
+
+//    @GenericGenerator(name = "sequence_profile_id", strategy = "Entity.ProfileIdGenerator")
+//    @GeneratedValue(generator = "sequence_profile_id")
     @Column(name = "atp000", nullable = false)
     public String atp000;
     @Column(name = "at007")
@@ -92,9 +92,13 @@ public class CompleteProfileEntity implements Serializable{
     @Column(name = "at045",nullable = false)
     public String at045;
     @Column(name = "at046",nullable = false)
-    public long at046;
+    public String at046;
     @Column(name = "at047",nullable = false)
     public String at047;
+    @Column(name = "at048",nullable = false)
+    public String at048;
+    @Column(name = "at049",nullable = false)
+    public String at049;
     @OneToOne(cascade =CascadeType.ALL)
     @PrimaryKeyJoinColumn
     public RegistrationdetailsEntity registrationdetailsEntity;
@@ -363,6 +367,22 @@ public class CompleteProfileEntity implements Serializable{
         this.at039 = at039;
     }
 
+    public String getAt048() {
+        return at048;
+    }
+
+    public void setAt048(String at048) {
+        this.at048 = at048;
+    }
+
+    public String getAt049() {
+        return at049;
+    }
+
+    public void setAt049(String at049) {
+        this.at049 = at049;
+    }
+
     public String getAt040() {
         return at040;
     }
@@ -411,11 +431,11 @@ public class CompleteProfileEntity implements Serializable{
         this.at045 = at045;
     }
 
-    public long getAt046() {
+    public String getAt046() {
         return at046;
     }
 
-    public void setAt046(long at046) {
+    public void setAt046(String at046) {
         this.at046 = at046;
     }
 
@@ -471,6 +491,8 @@ public class CompleteProfileEntity implements Serializable{
                 ", at037='" + at037 + '\'' +
                 ", at038='" + at038 + '\'' +
                 ", at039='" + at039 + '\'' +
+                ", at048='" + at048 + '\'' +
+                ", at049='" + at049 + '\'' +
                 ", at040='" + at040 + '\'' +
                 ", at041='" + at041 + '\'' +
                 ", at042='" + at042 + '\'' +

@@ -23,8 +23,8 @@ public class RegisterServiceImpl implements RegisterService {
 
 
     @Override
-    public void saveRegistrationDetails(RegistrationdetailsEntity registrationdetailsEntity) {
-        registerDao.saveRegisterationDetails(registrationdetailsEntity);
+    public String saveRegistrationDetails(RegistrationdetailsEntity registrationdetailsEntity) throws  Exception {
+         return registerDao.saveRegisterationDetails(registrationdetailsEntity);
 //        return null;
     }
 }

@@ -16,7 +16,7 @@ function submitlogindetails() {
             url: baseurl+ "/srv002",
             method: "POST",
             contentType: 'application/json',
-            header:'sessionid=101',
+            //header:'sessionid=101',
             data: JSON.stringify(login),
             crossDomain: true,
             success: function (data) {
@@ -30,6 +30,7 @@ function submitlogindetails() {
                 }
                 else {
                     alert(data);
+
                     window.location.href = baseurl + "/assets/public_html/index.html";
                 }
             }

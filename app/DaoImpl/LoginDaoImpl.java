@@ -36,6 +36,7 @@ public class LoginDaoImpl implements LoginDao {
     @javax.transaction.Transactional
     public String checkLoginDetails(LoginEntity loginEntity) {
         String result="";
+//        String uniqueKey=null;
         HibernateUtils hibernateUtils=HibernateUtils.getInstance();
         SessionFactory sessionFactory = hibernateUtils.getSessionFactory();
         Session session = sessionFactory.openSession();
@@ -65,9 +66,16 @@ public class LoginDaoImpl implements LoginDao {
                   System.out.println("email is"+registrationdetailsEntity1.getAt003()+"profile id"+registrationdetailsEntity1.getAtp000());
                  String emname=registrationdetailsEntity1.getAt003();
                  String pfid=registrationdetailsEntity1.getAtp000();
+                 if(pfid!=null){
+                     Criteria criteria=session.createCriteria(LoginActivity.class);
+                     criteria.add(Restrictions.eq("atp000",pfid));
+                     LoginActivity loginActivity=(LoginActivity) criteria.uniqueResult();
+                     result=loginActivity.getSeckey();
+
+                 }
 
                   if ((registrationdetailsEntity1.getAt001().equals(username)||registrationdetailsEntity1.getAtp000().equals(username))&&PasswordHashing.check(password,registrationdetailsEntity1.getAt002())) {
-                      result = "Success";
+//                      result = "Success";
                       System.out.println("Login Success");
 
                   }

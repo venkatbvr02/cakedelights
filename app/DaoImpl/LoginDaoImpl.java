@@ -55,15 +55,15 @@ public class LoginDaoImpl implements LoginDao {
             cr.add(Restrictions.or(Restrictions.eq("at001", username),Restrictions.eq("atp000",username)));
 
             List<RegistrationdetailsEntity> results = cr.list();
-            System.out.println(results);
+            System.out.println(results.toString());
             Iterator<RegistrationdetailsEntity> iterator=results.listIterator();
               while ((iterator.hasNext())) {
 
                   RegistrationdetailsEntity registrationdetailsEntity1=iterator.next();
-                  System.out.println(registrationdetailsEntity1.getAt003());
-                  System.out.println(":::::::::::::::::::::::: "+ PasswordHashing.check(password,registrationdetailsEntity1.getAt002()));
-                  System.out.println("actual password "+password+" ::::: "+registrationdetailsEntity1.getAt002());
-                  System.out.println("email is"+registrationdetailsEntity1.getAt003()+"profile id"+registrationdetailsEntity1.getAtp000());
+//                  System.out.println(registrationdetailsEntity1.getAt003());
+//                  System.out.println(":::::::::::::::::::::::: "+ PasswordHashing.check(password,registrationdetailsEntity1.getAt002()));
+//                  System.out.println("actual password "+password+" ::::: "+registrationdetailsEntity1.getAt002());
+//                  System.out.println("email is"+registrationdetailsEntity1.getAt003()+"profile id"+registrationdetailsEntity1.getAtp000());
                  String emname=registrationdetailsEntity1.getAt003();
                  String pfid=registrationdetailsEntity1.getAtp000();
                  if(pfid!=null){

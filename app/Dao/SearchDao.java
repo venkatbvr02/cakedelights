@@ -2,8 +2,13 @@ package Dao;
 
 import Entity.CompleteProfileEntity;
 import Entity.SearchEntity;
+import Entity.SearchEntitys;
+
+import java.io.IOException;
+import java.util.List;
 
 public interface SearchDao {
-    void searchDetails(SearchEntity searchEntity);
+    List<SearchEntitys> searchDetails(SearchEntity searchEntity)throws IOException;
+    List<SearchEntitys> getfeaturedprofiles(String profid);
 }
 

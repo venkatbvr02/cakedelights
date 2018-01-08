@@ -14,10 +14,10 @@ $(document).ready(function () {
         }
     };
     $('#nextbutton').click(function(){
-        alert("coing");
+       // alert("coming");
         var file_data = $("#profilePicture").prop("files")[0];
         var fileName = $("#profilePicture").prop("files")[0].name;
-        alert("file name is "+fileName);
+        //alert("file name is "+fileName);
         var frm = new FormData();
         frm.append('profilePicture', file_data);
         if ( /\.(jpe?g|png)$/i.test(fileName) ) {
@@ -28,9 +28,14 @@ $(document).ready(function () {
                 dataType: 'script',
                 contentType: false,
                 processData: false,
-                cache: false
+                cache: false,
+                 // success:function ("File uploaded") {
+                 //     alert("profile pic added successfully");
 
+        //}
             });
+            alert("Profile added Suucessfully");
+            window.location = "index.html";
         }
         else {
             showAlert("Error","Must be Extention either .jpg or .jpeg");
@@ -38,7 +43,7 @@ $(document).ready(function () {
     });
 //$('#imageinput').change(function(){
 function saveimage() {
-    alert("coming here :::::::");
+   // alert("coming here :::::::");
     var file_data = $("#profilePicture").prop("files")[0];
 
 

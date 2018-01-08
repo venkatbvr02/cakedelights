@@ -69,7 +69,7 @@ public class Application extends Controller {
 
         }
        // session("profileId",registrationdetailsEntity.getAtp000());
-        return ok(":registration success");
+        return ok("registration success");
     }
 
 

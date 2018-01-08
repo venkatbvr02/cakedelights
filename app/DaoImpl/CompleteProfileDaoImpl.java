@@ -5,6 +5,7 @@ import Entity.CompleteProfileEntity;
 import Entity.RegistrationdetailsEntity;
 import com.srujanika.utils.HibernateUtils;
 import org.hibernate.*;
+import org.hibernate.criterion.Restrictions;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.id.IdentifierGenerator;
 import org.hibernate.id.IdentityGenerator;
@@ -15,11 +16,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Iterator;
 import java.util.concurrent.Callable;
 
-public class CompleteProfileDaoImpl implements CompleteProfileDao,IdentifierGenerator {
+public class CompleteProfileDaoImpl implements CompleteProfileDao {
     RegistrationdetailsEntity registrationdetailsEntity;
-    SharedSessionContractImplementor sharedSessionContractImplementor;
+//    SharedSessionContractImplementor sharedSessionContractImplementor;
 
     //    public static void generate(SharedSessionContractImplementor sharedSessionContractImplementor)
 //    {
@@ -32,30 +36,45 @@ public class CompleteProfileDaoImpl implements CompleteProfileDao,IdentifierGene
         SessionFactory sessionFactory = hibernateUtils.getSessionFactory();
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        CompleteProfileDaoImpl completeProfileDao=new CompleteProfileDaoImpl();
-        //completeProfileDao.generate(sharedSessionContractImplementor,completeProfileDao);
-        //Criteria criteria=session.createCriteria(RegistrationdetailsEntity.class);
-        //Criteria criteria1=session.createCriteria(CompleteProfileEntity.class);
-
-       //sharedSessionContractImplementor.connection();
-
         try {
+            String profid=completeProfileEntity.getAtp000();
+            Criteria criteria=session.createCriteria(RegistrationdetailsEntity.class);
+            criteria.add(Restrictions.eq("atp000",profid));
+            RegistrationdetailsEntity registrationdetailsEntity=(RegistrationdetailsEntity)criteria.uniqueResult();
+           // Iterator<RegistrationdetailsEntity> iterator=registrationdetailsEntity.
+    Date d = registrationdetailsEntity.getAt004();
+    Calendar today = Calendar.getInstance();
+    Calendar birthDate = Calendar.getInstance();
+    birthDate.setTime(d);
+    if (birthDate.after(d)) {
+        throw new IllegalArgumentException("You don't Exist in this world");
+    }
+    int todayYear = today.get(Calendar.YEAR);
+    int birthDateYear = birthDate.get(Calendar.YEAR);
+    int todayDayOfYear = today.get(Calendar.DAY_OF_YEAR);
+    int birthDateDayOfYear = birthDate.get(Calendar.DAY_OF_YEAR);
+    int todayMonth = today.get(Calendar.MONTH);
+    int birthDateMonth = birthDate.get(Calendar.MONTH);
+    int todayDayOfMonth = today.get(Calendar.DAY_OF_MONTH);
+    int birthDateDayOfMonth = birthDate.get(Calendar.DAY_OF_MONTH);
+  int age = todayYear - birthDateYear;
 
-           //statement statement = connection.createStatement();
-            //System.out.println("coming here;;;;;;;yes");
-            //ResultSet rs = statement.executeQuery("SELECT atp000 FROM registrationdetails  WHERE at000=(SELECT MAX(at000)+1 FROM completeprofiledetails c)");
-//            System.out.println("coming here;;;;;;;");
-//            if (rs.next()) {
-//                System.out.println("coming here");
-//                String pid = rs.getString(1);
-//                System.out.println(":::::::::::::::::::" + pid);
+    // If birth date is greater than todays date (after 2 days adjustment of leap year) then decrement age one year
+    if ((birthDateDayOfYear - todayDayOfYear > 3) || (birthDateMonth > todayMonth)) {
+        age--;
 
-               // completeProfileEntity.setAtp000("38");
-
+        // If birth date and todays date are of same month and birth day of month is greater than todays day of month then decrement age
+    } else if ((birthDateMonth == todayMonth) && (birthDateDayOfMonth > todayDayOfMonth)) {
+        age--;
+    }
+    System.out.println(age);
+                completeProfileEntity.setAt033(age);
+                completeProfileEntity.setAt005(registrationdetailsEntity.getAt005());
+                completeProfileEntity.setAt050(1);
                 session.save(completeProfileEntity);
                 transaction.commit();
-            //}
-        }
+
+                    }
 
         catch (NullPointerException ne)
         {
@@ -72,34 +91,6 @@ public class CompleteProfileDaoImpl implements CompleteProfileDao,IdentifierGene
         }
     }
 
-    @Override
-    public Serializable generate(SharedSessionContractImplementor sharedSessionContractImplementor, Object o) throws HibernateException {
-        return null;
-    }
-
-//    }
-
-//    @Override
-//    public Serializable generate(SharedSessionContractImplementor sharedSessionContractImplementor, Object o) throws HibernateException {
-//        Connection connection = sharedSessionContractImplementor.connection();
-//        String pid = "";
-//        try {
-//
-//            Statement statement = connection.createStatement();
-//            System.out.println("coming here;;;;;;;yes");
-//            ResultSet rs = statement.executeQuery("SELECT atp000 FROM registrationdetails  WHERE at000=(SELECT MAX(at000)+1 FROM completeprofiledetails c)");
-//            System.out.println("coming here;;;;;;;");
-//            if (rs.next()) {
-//                System.out.println("coming here");
-//                pid = rs.getString(1);
-//                System.out.println(":::::::::::::::::::" + pid);
-//
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return pid;
-//    }
 
 
 }

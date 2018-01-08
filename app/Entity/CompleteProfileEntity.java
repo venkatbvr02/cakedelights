@@ -1,11 +1,10 @@
 package Entity;
 
-import org.hibernate.annotations.GenericGenerator;
-import play.libs.Time;
-
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
+@SuppressWarnings("ALL")
 @Entity
 @Table(name="completeprofiledetails", schema="matrimony")
 public class CompleteProfileEntity implements Serializable{
@@ -17,6 +16,8 @@ public class CompleteProfileEntity implements Serializable{
 //    @GeneratedValue(generator = "sequence_profile_id")
     @Column(name = "atp000", nullable = false)
     public String atp000;
+    @Column(name="at005")
+    public String at005;
     @Column(name = "at007")
     public String at007;
     @Column(name="at008")
@@ -99,9 +100,27 @@ public class CompleteProfileEntity implements Serializable{
     public String at048;
     @Column(name = "at049",nullable = false)
     public String at049;
+   @Column(name = "at033",nullable = false)
+    public int at033;
+   @Column(name = "at050")
+   public  int at050;
+   @Column(name="img_path")
+   public String img_path;
+   @Column(name = "clicked_prof_id",nullable = false)
+   public String clicked_prof_id;
+   @Column(name="clicked_on_me")
+   public String clicked_on_me;
     @OneToOne(cascade =CascadeType.ALL)
     @PrimaryKeyJoinColumn
     public RegistrationdetailsEntity registrationdetailsEntity;
+
+    public String getImg_path() {
+        return img_path;
+    }
+
+    public void setImg_path(String img_path) {
+        this.img_path = img_path;
+    }
 
     public int getAt000() {
         return at000;
@@ -118,6 +137,54 @@ public class CompleteProfileEntity implements Serializable{
     public void setAtp000(String atp000) {
         this.atp000 = atp000;
     }
+
+    public String getAt005() {
+        return at005;
+    }
+
+    public void setAt005(String at005) {
+        this.at005 = at005;
+    }
+
+    public int getAt033() {
+        return at033;
+    }
+
+    public void setAt033(int at033) {
+        this.at033 = at033;
+    }
+
+    public int getAt050() {
+        return at050;
+    }
+
+    public void setAt050(int at050) {
+        this.at050 = at050;
+    }
+
+    public String getClicked_prof_id() {
+        return clicked_prof_id;
+    }
+
+    public String getClicked_on_me() {
+        return clicked_on_me;
+    }
+
+    public void setClicked_on_me(String clicked_on_me) {
+        this.clicked_on_me = clicked_on_me;
+    }
+
+    public void setClicked_prof_id(String clicked_prof_id) {
+        this.clicked_prof_id = clicked_prof_id;
+    }
+
+    //    public String getAt004() {
+//        return at004;
+//    }
+//
+//    public void setAt004(String at004) {
+//        this.at004 = at004;
+//    }
 
     public String getAt007() {
         return at007;
@@ -501,6 +568,7 @@ public class CompleteProfileEntity implements Serializable{
                 ", at045='" + at045 + '\'' +
                 ", at046=" + at046 +
                 ", at047='" + at047 + '\'' +
+                ", img_path='" + img_path + '\'' +
                 '}';
     }
 }

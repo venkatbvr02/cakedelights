@@ -16,6 +16,7 @@ libraryDependencies += "org.hibernate" % "hibernate-core" % "5.2.10.Final"
 //libraryDependencies += "org.apache.commons" % "commons-collections4" % "4.1"
 libraryDependencies += cache
 libraryDependencies += javaWs
+libraryDependencies += filters
 libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.41"
 unmanagedResourceDirectories in Test <+=  baseDirectory ( _ /"target/web/public/test" )
 

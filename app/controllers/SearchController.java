@@ -1,36 +1,58 @@
 package controllers;
 
 //import Entity.CompleteProfileEntity;
+import Entity.CompleteProfileEntity;
 import Entity.SearchEntity;
+import Entity.SearchEntitys;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import com.srujanika.utils.EncyDecyUtility;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
 import service.SearchService;
+import serviceImpl.SearchServiceImpl;
+
+import javax.inject.Inject;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 public class SearchController extends Controller {
-    SearchService searchService;
+    @Inject
+    SearchServiceImpl searchService;
    @BodyParser.Of(BodyParser.Json.class)
-    public Result search()
+    public Result search() throws JsonProcessingException,IOException
     {
         JsonNode jsonNode=request().body().asJson();
         ObjectMapper objectMapper=new ObjectMapper();
-        try
-        {
            SearchEntity searchEntity =objectMapper.treeToValue(jsonNode,SearchEntity.class);
-            System.out.println(searchEntity.getAt005()+"::::::::::::::::::::::::::::::"+searchEntity.getAt007()+":::::::");
-           // String profid= EncyDecyUtility.decrypt(request().cookie("uniquekey").value(),"yourprofileidofp");
-           searchService.searchDetails(searchEntity);
-
-        }
-        catch (JsonProcessingException e)
+        List<SearchEntitys> results= searchService.searchDetails(searchEntity);
+            Gson gson=new Gson();
+            String jsonResponseString=gson.toJson(results);
+            if (jsonResponseString!=null)
+            {
+                return ok(jsonResponseString.trim());
+            }
+            else
+            {
+             return redirect("/assets/public_html/complete_profile.html");
+            }
+    }
+    public Result getfeaturedprofiles()
+    {
+        String profid=EncyDecyUtility.decrypt(request().cookie("uniquekey").value(),"yoursecretkeyofp");
+        List<SearchEntitys> searchEntitysList=searchService.getfeaturedprofiles(profid);
+        Gson gson=new Gson();
+        String responsestring=gson.toJson(searchEntitysList);
+        if (responsestring!=null)
         {
-            e.printStackTrace();
+            return ok(responsestring);
         }
-
-        return ok("Search results");
+        else {
+            return ok(responsestring);
+        }
     }
 }

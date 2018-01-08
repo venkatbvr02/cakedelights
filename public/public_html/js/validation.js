@@ -41,7 +41,7 @@ function getDropdownValue(selectedvalue) {
 return _result;
 }
 
-// <<<<<<< HEAD
+
 function setradioValue(groupName,fieldValue){
     $("input[name="+groupName+"]").val([fieldValue]);
 }

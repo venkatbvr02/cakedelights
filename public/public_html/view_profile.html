@@ -3,6 +3,7 @@ Author: W3layout
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
+
 -->
 <!DOCTYPE HTML>
 <html>
@@ -129,56 +130,52 @@ $(document).ready(function(){
    </div>
    <div class="profile">
    	 <div class="col-md-8 profile_left">
-   	 	<h2>Profile Id : 254870</h2>
+   	 	<h2><p id="pfid"></p></h2>
    	 	<div class="col_3">
    	        <div class="col-sm-4 row_2">
 				<div class="flexslider">
 					 <ul class="slides">
-						<li data-thumb="images/p1.jpg">
-							<img src="images/p1.jpg" />
+						<li>
+							<img id="profile_img11" src="" />
 						</li>
-						<li data-thumb="images/p2.jpg">
-							<img src="images/p2.jpg" />
-						</li>
-						<li data-thumb="images/p3.jpg">
-							<img src="images/p3.jpg" />
-						</li>
-						<li data-thumb="images/p4.jpg">
-							<img src="images/p4.jpg" />
-						</li>
+
 					 </ul>
 				  </div>
 			</div>
 			<div class="col-sm-8 row_1">
 				<table class="table_working_hours">
 		        	<tbody>
+					<tr class="opened_1">
+						<td class="day_label">ProfileId :</td>
+						<td><p id="profid1"></p> </td>
+					</tr>
 		        		<tr class="opened_1">
-							<td class="day_label">Age / Height :</td>
-							<td class="day_value">28, 5ft 5in / 163cm</td>
+							<td class="day_label">Age :</td>
+							<td class="day_value" id="age1"><p id="age"></p></td>
 						</tr>
 					    <tr class="opened">
-							<td class="day_label">Last Login :</td>
-							<td class="day_value">4 hours ago</td>
+							<td class="day_label">Height :</td>
+							<td class="day_value" id="heigh"><p id="height"></p> </td>
 						</tr>
 					    <tr class="opened">
 							<td class="day_label">Religion :</td>
-							<td class="day_value">Sikh</td>
+							<td class="day_value" ><p id="religion"></p> </td>
 						</tr>
 					    <tr class="opened">
 							<td class="day_label">Marital Status :</td>
-							<td class="day_value">Single</td>
+							<td class="day_value"><p id="marstatus"></p> </td>
 						</tr>
 					    <tr class="opened">
 							<td class="day_label">Location :</td>
-							<td class="day_value">India</td>
+							<td class="day_value"><p id="loc"></p> </td>
 						</tr>
-					    <tr class="closed">
-							<td class="day_label">Profile Created by :</td>
-							<td class="day_value closed"><span>Self</span></td>
-						</tr>
+					    <!--<tr class="closed">-->
+							<!--<td class="day_label">Profile Created by :</td>-->
+							<!--<td class="day_value closed"><span>Self</span></td>-->
+						<!--</tr>-->
 					    <tr class="closed">
 							<td class="day_label">Education :</td>
-							<td class="day_value closed"><span>Engineering</span></td>
+							<td class="day_value closed"><p id="edu"></p> </td>
 						</tr>
 				    </tbody>
 				</table>
@@ -198,46 +195,46 @@ $(document).ready(function(){
 			   </ul>
 			   <div id="myTabContent" class="tab-content">
 				  <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
-				    <div class="tab_box">
-				    	<h1>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h1>
-				    	<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor</p>
-				    </div>
+				    <!--<div class="tab_box">-->
+				    	<!--<h1>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h1>-->
+				    	<!--<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor</p>-->
+				    <!--</div>-->
 				    <div class="basic_1">
 				    	<h3>Basics & Lifestyle</h3>
 				    	<div class="col-md-6 basic_1-left">
 				    	  <table class="table_working_hours">
 				        	<tbody>
-				        		<tr class="opened_1">
-									<td class="day_label">Name :</td>
-									<td class="day_value">Lorem</td>
-								</tr>
+				        		<!--<tr class="opened_1">-->
+									<!--<td class="day_label">Name :</td>-->
+									<!--<td class="day_value">Lorem</td>-->
+								<!--</tr>-->
 							    <tr class="opened">
 									<td class="day_label">Marital Status :</td>
-									<td class="day_value">Single</td>
+									<td class="day_value"><p id="mari"></p> </td>
 								</tr>
 							    <tr class="opened">
 									<td class="day_label">Body Type :</td>
-									<td class="day_value">Average</td>
+									<td class="day_value"><p id="botype"></p> </td>
 								</tr>
-							    <tr class="opened">
-									<td class="day_label">Marital Status :</td>
-									<td class="day_value">Single</td>
-								</tr>
+							    <!--<tr class="opened">-->
+									<!--<td class="day_label">Marital Status :</td>-->
+									<!--<td class="day_value" >Single</td>-->
+								<!--</tr>-->
 							    <tr class="opened">
 									<td class="day_label">Height :</td>
-									<td class="day_value">28, 5ft 5in / 163cm</td>
+									<td class="day_value"><p id="heit"></p> </td>
 								</tr>
 							    <tr class="opened">
-									<td class="day_label">Physical Status :</td>
-									<td class="day_value closed"><span>Not Specified</span></td>
+									<td class="day_label">Physically chalanged :</td>
+									<td class="day_value closed"><p id="phs"></p> </td>
 								</tr>
-							    <tr class="opened">
-									<td class="day_label">Profile Created by :</td>
-									<td class="day_value closed"><span>Self</span></td>
-								</tr>
+							    <!--<tr class="opened">-->
+									<!--<td class="day_label">Profile Created by :</td>-->
+									<!--<td class="day_value closed"><span>Self</span></td>-->
+								<!--</tr>-->
 								<tr class="opened">
 									<td class="day_label">Drink :</td>
-									<td class="day_value closed"><span>No</span></td>
+									<td class="day_value closed"><p id="drink"></p> </td>
 								</tr>
 						    </tbody>
 				          </table>
@@ -247,31 +244,31 @@ $(document).ready(function(){
 				        	<tbody>
 				        		<tr class="opened_1">
 									<td class="day_label">Age :</td>
-									<td class="day_value">28 Yrs</td>
+									<td class="day_value"><p id="age2"></p> </td>
 								</tr>
 							    <tr class="opened">
 									<td class="day_label">Mother Tongue :</td>
-									<td class="day_value">Hindi</td>
+									<td class="day_value"><p id="mothertongue"></p> </td>
 								</tr>
-							    <tr class="opened">
-									<td class="day_label">Complexion :</td>
-									<td class="day_value">Fair</td>
-								</tr>
+							    <!--<tr class="opened">-->
+									<!--<td class="day_label">Complexion :</td>-->
+									<!--<td class="day_value"><p id="" </td>-->
+								<!--</tr>-->
 							    <tr class="opened">
 									<td class="day_label">Weight :</td>
-									<td class="day_value">45</td>
+									<td class="day_value"><p id="weight"></p> </td>
 								</tr>
-							    <tr class="opened">
-									<td class="day_label">Blood Group :</td>
-									<td class="day_value">B+</td>
-								</tr>
+							    <!--<tr class="opened">-->
+									<!--<td class="day_label">Blood Group :</td>-->
+									<!--<td class="day_value">B+</td>-->
+								<!--</tr>-->
 							    <tr class="closed">
 									<td class="day_label">Diet :</td>
-									<td class="day_value closed"><span>Non-Veg</span></td>
+									<td class="day_value closed"><p id="fodtype"></p> </td>
 								</tr>
 							    <tr class="closed">
 									<td class="day_label">Smoke :</td>
-									<td class="day_value closed"><span>No</span></td>
+									<td class="day_value closed"><p id="smoke"></p> </td>
 								</tr>
 						    </tbody>
 				        </table>
@@ -285,19 +282,19 @@ $(document).ready(function(){
 				        	<tbody>
 				        		<tr class="opened">
 									<td class="day_label">Time of Birth :</td>
-									<td class="day_value">Not Specified</td>
+									<td class="day_value"><p id="timeofb"></p> </td>
 								</tr>
 				        		<tr class="opened">
 									<td class="day_label">Caste :</td>
-									<td class="day_value">Not Specified</td>
+									<td class="day_value"><p id="caste"></p> </td>
 								</tr>
-							    <tr class="opened">
-									<td class="day_label">Date of Birth :</td>
-									<td class="day_value closed"><span>01-05-1988</span></td>
-								</tr>
+							    <!--<tr class="opened">-->
+									<!--<td class="day_label">Date of Birth :</td>-->
+									<!--<td class="day_value closed"><span>01-05-1988</span></td>-->
+								<!--</tr>-->
 							    <tr class="opened">
 									<td class="day_label">Place of Birth :</td>
-									<td class="day_value closed"><span>Not Specified</span></td>
+									<td class="day_value closed"><p id="place"></p> </td>
 								</tr>
 							 </tbody>
 				          </table>
@@ -307,15 +304,15 @@ $(document).ready(function(){
 				        	<tbody>
 				        		<tr class="opened_1">
 									<td class="day_label">Religion :</td>
-									<td class="day_value">Hindu</td>
+									<td class="day_value"><p id="religion1"></p> </td>
 								</tr>
 							    <tr class="opened">
 									<td class="day_label">Sub Caste :</td>
-									<td class="day_value">Not Specified</td>
+									<td class="day_value"><p id="subcaste"></p> </td>
 								</tr>
 							    <tr class="opened">
 									<td class="day_label">Raasi :</td>
-									<td class="day_value">Kanya</td>
+									<td class="day_value"><p id="rasi"></p> </td>
 								</tr>
 							</tbody>
 				        </table>
@@ -329,19 +326,19 @@ $(document).ready(function(){
 				        	<tbody>
 				        		<tr class="opened">
 									<td class="day_label">Education   :</td>
-									<td class="day_value">Engineering</td>
+									<td class="day_value"><p id="edu1"></p> </td>
 								</tr>
 				        		<tr class="opened">
 									<td class="day_label">Education Detail :</td>
-									<td class="day_value">Software Engineer</td>
+									<td class="day_value"><p id="edudetail"></p> </td>
 								</tr>
 							    <tr class="opened">
 									<td class="day_label">Occupation Detail :</td>
-									<td class="day_value closed"><span>There are many variations of passages of Lorem Ipsum available</span></td>
+									<td class="day_value closed"><p id="occdetail"></p> </td>
 								</tr>
 							    <tr class="opened">
-									<td class="day_label">Annual Income :</td>
-									<td class="day_value closed"><span>Rs.5,00,000 - 6,00,000</span></td>
+									<td class="day_label">Income :</td>
+									<td class="day_value closed"><p id="aninc"></p> </td>
 								</tr>
 							 </tbody>
 				          </table>
@@ -359,19 +356,19 @@ $(document).ready(function(){
 				        	<tbody>
 				        		<tr class="opened">
 									<td class="day_label">Father's Occupation :</td>
-									<td class="day_value">Not Specified</td>
+									<td class="day_value"><p id="fathoccu"></p> </td>
 								</tr>
 				        		<tr class="opened">
 									<td class="day_label">Mother's Occupation :</td>
-									<td class="day_value">Not Specified</td>
+									<td class="day_value"><p id="mothoccu"></p> </td>
 								</tr>
 							    <tr class="opened">
 									<td class="day_label">No. of Brothers :</td>
-									<td class="day_value closed"><span>Not Specified</span></td>
+									<td class="day_value closed"><p id="noofbro"></p> </td>
 								</tr>
 							    <tr class="opened">
 									<td class="day_label">No. of Sisters :</td>
-									<td class="day_value closed"><span>Not Specified</span></td>
+									<td class="day_value closed"><p id="noofsis"></p> </td>
 								</tr>
 							 </tbody>
 				          </table>
@@ -386,27 +383,27 @@ $(document).ready(function(){
 				        	<tbody>
 				        		<tr class="opened">
 									<td class="day_label">Age   :</td>
-									<td class="day_value">28 to 35</td>
+									<td class="day_value"><p id="age3"></p> </td>
 								</tr>
 				        		<tr class="opened">
 									<td class="day_label">Marital Status :</td>
-									<td class="day_value">Single</td>
+									<td class="day_value"><p id="marstat"></p> </td>
 								</tr>
 							    <tr class="opened">
 									<td class="day_label">Body Type :</td>
-									<td class="day_value closed"><span>Doesn't matter</span></td>
+									<td class="day_value closed"><p id="body"></p> </td>
 								</tr>
-							    <tr class="opened">
-									<td class="day_label">Complexion :</td>
-									<td class="day_value closed"><span>Doesn't matter</span></td>
-								</tr>
+							    <!--<tr class="opened">-->
+									<!--<td class="day_label">Complexion :</td>-->
+									<!--<td class="day_value closed"><span>Doesn't matter</span></td>-->
+								<!--</tr>-->
 								<tr class="opened">
-									<td class="day_label">Height 5ft 9 in / 175cm :</td>
-									<td class="day_value closed"><span>Doesn't matter</span></td>
+									<td class="day_label">Height</td>
+									<td class="day_value closed"><p id="height4"></p> </td>
 								</tr>
 								<tr class="opened">
 									<td class="day_label">Diet :</td>
-									<td class="day_value closed"><span>Doesn't matter</span></td>
+									<td class="day_value closed"><p id="diet"></p> </td>
 								</tr>
 								<tr class="opened">
 									<td class="day_label">Kujadosham / Manglik :</td>
@@ -414,35 +411,35 @@ $(document).ready(function(){
 								</tr>
 								<tr class="opened">
 									<td class="day_label">Religion :</td>
-									<td class="day_value closed"><span>Doesn't matter</span></td>
+									<td class="day_value closed"><p id="reli"></p> </td>
 								</tr>
 								<tr class="opened">
 									<td class="day_label">Caste :</td>
-									<td class="day_value closed"><span>Doesn't matter</span></td>
+									<td class="day_value closed"><p id="cas"></p> </td>
 								</tr>
 								<tr class="opened">
 									<td class="day_label">Mother Tongue :</td>
-									<td class="day_value closed"><span>Doesn't matter</span></td>
+									<td class="day_value closed"><p id="mothtong"></p> </td>
 								</tr>
 								<tr class="opened">
 									<td class="day_label">Education :</td>
-									<td class="day_value closed"><span>Doesn't matter</span></td>
+									<td class="day_value closed"><p id="ed"></p> </td>
 								</tr>
 								<tr class="opened">
 									<td class="day_label">Occupation :</td>
-									<td class="day_value closed"><span>Doesn't matter</span></td>
+									<td class="day_value closed"><p id="occup"></p> </td>
 								</tr>
 								<tr class="opened">
 									<td class="day_label">Country of Residence :</td>
-									<td class="day_value closed"><span>Doesn't matter</span></td>
+									<td class="day_value closed"><p id="country"></p> </td>
 								</tr>
 								<tr class="opened">
 									<td class="day_label">State :</td>
-									<td class="day_value closed"><span>Doesn't matter</span></td>
+									<td class="day_value closed"><p id="state"></p> </td>
 								</tr>
 								<tr class="opened">
 									<td class="day_label">Residency Status :</td>
-									<td class="day_value closed"><span>Doesn't matter</span></td>
+									<td class="day_value closed"><p id="ancorigin"></p> </td>
 								</tr>
 							 </tbody>
 				          </table>
@@ -455,22 +452,25 @@ $(document).ready(function(){
    	 </div>
      <div class="col-md-4 profile_right">
      	<div class="newsletter">
-		   <form>
-			  <input type="text" name="ne" size="30" required="" placeholder="Enter Profile ID :">
-			  <input type="submit" value="Go">
-		   </form>
+		   <!--<form>-->
+			  <!--<input type="text" name="profid" id="profid" size="30" required="" placeholder="Enter Profile ID :">-->
+			  <!--<input type="submit" onclick="getProfile();" value="Go">-->
+		   <!--</form>-->
+			<input type="text" class="m_1" name="profid" id="profid" size="30" required="" placeholder="Enter Profile ID :">
+			<input type="submit" onclick="getProfile();" value="Go">
         </div>
         <div class="view_profile">
         	<h3>View Similar Profiles</h3>
         	<ul class="profile_item">
         	  <a href="#">
         	   <li class="profile_item-img">
-        	   	  <img src="images/p5.jpg" class="img-responsive" alt=""/>
+        	   	  <img id="profile_img1" src="" class="img-responsive" alt=""/>
         	   </li>
         	   <li class="profile_item-desc">
-        	   	  <h4>2458741</h4>
-        	   	  <p>29 Yrs, 5Ft 5in Christian</p>
-        	   	  <h5>View Full Profile</h5>
+				   <h4><span id="profile_id1" onclick="getView(this.id);"></span></h4>
+				   <p id="details1" ></p>
+
+				   <h5>View Full Profile</h5>
         	   </li>
         	   <div class="clearfix"> </div>
         	  </a>
@@ -478,12 +478,13 @@ $(document).ready(function(){
            <ul class="profile_item">
         	  <a href="#">
         	   <li class="profile_item-img">
-        	   	  <img src="images/p6.jpg" class="img-responsive" alt=""/>
+        	   	  <img id="profile_img2" src="" class="img-responsive" alt=""/>
         	   </li>
         	   <li class="profile_item-desc">
-        	   	  <h4>2458741</h4>
-        	   	  <p>29 Yrs, 5Ft 5in Christian</p>
-        	   	  <h5>View Full Profile</h5>
+				   <h4><span id="profile_id2" onclick="getView(this.id);"></span></h4>
+				   <p id="details2" ></p>
+
+				   <h5>View Full Profile</h5>
         	   </li>
         	   <div class="clearfix"> </div>
         	  </a>
@@ -491,12 +492,13 @@ $(document).ready(function(){
            <ul class="profile_item">
         	  <a href="#">
         	   <li class="profile_item-img">
-        	   	  <img src="images/p7.jpg" class="img-responsive" alt=""/>
+        	   	  <img id="profile_img3" src="" class="img-responsive" alt=""/>
         	   </li>
         	   <li class="profile_item-desc">
-        	   	  <h4>2458741</h4>
-        	   	  <p>29 Yrs, 5Ft 5in Christian</p>
-        	   	  <h5>View Full Profile</h5>
+				   <h4><span id="profile_id3" onclick="getView(this.id);"></span></h4>
+				   <p id="details3" ></p>
+
+				   <h5>View Full Profile</h5>
         	   </li>
         	   <div class="clearfix"> </div>
         	  </a>
@@ -504,12 +506,13 @@ $(document).ready(function(){
            <ul class="profile_item">
         	  <a href="#">
         	   <li class="profile_item-img">
-        	   	  <img src="images/p8.jpg" class="img-responsive" alt=""/>
+        	   	  <img id="profile_img4" src="" class="img-responsive" alt=""/>
         	   </li>
         	   <li class="profile_item-desc">
-        	   	  <h4>2458741</h4>
-        	   	  <p>29 Yrs, 5Ft 5in Christian</p>
-        	   	  <h5>View Full Profile</h5>
+				   <h4><span id="profile_id4" onclick="getView(this.id);"></span></h4>
+				   <p id="details4" ></p>
+
+				   <h5>View Full Profile</h5>
         	   </li>
         	   <div class="clearfix"> </div>
         	  </a>
@@ -520,12 +523,13 @@ $(document).ready(function(){
         	<ul class="profile_item">
         	  <a href="#">
         	   <li class="profile_item-img">
-        	   	  <img src="images/p9.jpg" class="img-responsive" alt=""/>
+        	   	  <img id="profile_img5" src="" class="img-responsive" alt=""/>
         	   </li>
         	   <li class="profile_item-desc">
-        	   	  <h4>2458741</h4>
-        	   	  <p>29 Yrs, 5Ft 5in Christian</p>
-        	   	  <h5>View Full Profile</h5>
+				   <h4><span id="profile_id5" onclick="getView(this.id);"></span></h4>
+				   <p id="details5" ></p>
+
+				   <h5>View Full Profile</h5>
         	   </li>
         	   <div class="clearfix"> </div>
         	  </a>
@@ -533,12 +537,13 @@ $(document).ready(function(){
            <ul class="profile_item">
         	  <a href="#">
         	   <li class="profile_item-img">
-        	   	  <img src="images/p10.jpg" class="img-responsive" alt=""/>
+        	   	  <img id="profile_img6" src="" class="img-responsive" alt=""/>
         	   </li>
         	   <li class="profile_item-desc">
-        	   	  <h4>2458741</h4>
-        	   	  <p>29 Yrs, 5Ft 5in Christian</p>
-        	   	  <h5>View Full Profile</h5>
+				   <h4><span id="profile_id6" onclick="getView(this.id);"></span></h4>
+				   <p id="details6" ></p>
+
+				   <h5>View Full Profile</h5>
         	   </li>
         	   <div class="clearfix"> </div>
         	  </a>
@@ -546,12 +551,13 @@ $(document).ready(function(){
            <ul class="profile_item">
         	  <a href="#">
         	   <li class="profile_item-img">
-        	   	  <img src="images/p11.jpg" class="img-responsive" alt=""/>
+        	   	  <img id="profile_img7" src="" class="img-responsive" alt=""/>
         	   </li>
         	   <li class="profile_item-desc">
-        	   	  <h4>2458741</h4>
-        	   	  <p>29 Yrs, 5Ft 5in Christian</p>
-        	   	  <h5>View Full Profile</h5>
+				   <h4><span id="profile_id7" onclick="getView(this.id);"></span></h4>
+				   <p id="details7" ></p>
+
+				   <h5>View Full Profile</h5>
         	   </li>
         	   <div class="clearfix"> </div>
         	  </a>
@@ -559,12 +565,13 @@ $(document).ready(function(){
            <ul class="profile_item">
         	  <a href="#">
         	   <li class="profile_item-img">
-        	   	  <img src="images/p12.jpg" class="img-responsive" alt=""/>
+        	   	  <img id="profile_img8" src="" class="img-responsive" alt=""/>
         	   </li>
         	   <li class="profile_item-desc">
-        	   	  <h4>2458741</h4>
-        	   	  <p>29 Yrs, 5Ft 5in Christian</p>
-        	   	  <h5>View Full Profile</h5>
+				   <h4><span id="profile_id8" onclick="getView(this.id);"></span></h4>
+				   <p id="details8" ></p>
+
+				   <h5>View Full Profile</h5>
         	   </li>
         	   <div class="clearfix"> </div>
         	  </a>
@@ -575,47 +582,47 @@ $(document).ready(function(){
     </div>
   </div>
 </div>
-<div class="map">
-	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3150859.767904157!2d-96.62081048651531!3d39.536794757966845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1408111832978"> </iframe>
-</div>
-<div class="footer">
-    	<div class="container">
-    		<div class="col-md-4 col_2">
-    			<h4>About Us</h4>
-    			<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."</p>
-    		</div>
-    		<div class="col-md-2 col_2">
-    			<h4>Help & Support</h4>
-    			<ul class="footer_links">
-    				<li><a href="#">24x7 Live help</a></li>
-    				<li><a href="contact.html">Contact us</a></li>
-    				<li><a href="#">Feedback</a></li>
-    				<li><a href="faq.html">FAQs</a></li>
-    			</ul>
-    		</div>
-    		<div class="col-md-2 col_2">
-    			<h4>Quick Links</h4>
-    			<ul class="footer_links">
-    				<li><a href="privacy.html">Privacy Policy</a></li>
-    				<li><a href="terms.html">Terms and Conditions</a></li>
-    				<li><a href="services.html">Services</a></li>
-    			</ul>
-    		</div>
-    		<div class="col-md-2 col_2">
-    			<h4>Social</h4>
-    			<ul class="footer_social">
-				  <li><a href="#"><i class="fa fa-facebook fa1"> </i></a></li>
-				  <li><a href="#"><i class="fa fa-twitter fa1"> </i></a></li>
-				  <li><a href="#"><i class="fa fa-google-plus fa1"> </i></a></li>
-				  <li><a href="#"><i class="fa fa-youtube fa1"> </i></a></li>
-			    </ul>
-    		</div>
-    		<div class="clearfix"> </div>
-    		<div class="copy">
-		      <p>Copyright © 2015 Marital . All Rights Reserved  | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
-	        </div>
-    	</div>
-</div>
+<!--<div class="map">-->
+	<!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3150859.767904157!2d-96.62081048651531!3d39.536794757966845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1408111832978"> </iframe>-->
+<!--</div>-->
+<!--<div class="footer">-->
+    	<!--<div class="container">-->
+    		<!--<div class="col-md-4 col_2">-->
+    			<!--<h4>About Us</h4>-->
+    			<!--<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."</p>-->
+    		<!--</div>-->
+    		<!--<div class="col-md-2 col_2">-->
+    			<!--<h4>Help & Support</h4>-->
+    			<!--<ul class="footer_links">-->
+    				<!--<li><a href="#">24x7 Live help</a></li>-->
+    				<!--<li><a href="contact.html">Contact us</a></li>-->
+    				<!--<li><a href="#">Feedback</a></li>-->
+    				<!--<li><a href="faq.html">FAQs</a></li>-->
+    			<!--</ul>-->
+    		<!--</div>-->
+    		<!--<div class="col-md-2 col_2">-->
+    			<!--<h4>Quick Links</h4>-->
+    			<!--<ul class="footer_links">-->
+    				<!--<li><a href="privacy.html">Privacy Policy</a></li>-->
+    				<!--<li><a href="terms.html">Terms and Conditions</a></li>-->
+    				<!--<li><a href="services.html">Services</a></li>-->
+    			<!--</ul>-->
+    		<!--</div>-->
+    		<!--<div class="col-md-2 col_2">-->
+    			<!--<h4>Social</h4>-->
+    			<!--<ul class="footer_social">-->
+				  <!--<li><a href="#"><i class="fa fa-facebook fa1"> </i></a></li>-->
+				  <!--<li><a href="#"><i class="fa fa-twitter fa1"> </i></a></li>-->
+				  <!--<li><a href="#"><i class="fa fa-google-plus fa1"> </i></a></li>-->
+				  <!--<li><a href="#"><i class="fa fa-youtube fa1"> </i></a></li>-->
+			    <!--</ul>-->
+    		<!--</div>-->
+    		<!--<div class="clearfix"> </div>-->
+    		<!--<div class="copy">-->
+		      <!--<p>Copyright © 2015 Marital . All Rights Reserved  | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>-->
+	        <!--</div>-->
+    	<!--</div>-->
+<!--</div>-->
 <!-- FlexSlider -->
 <script defer src="js/jquery.flexslider.js"></script>
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
@@ -627,6 +634,15 @@ $(window).load(function() {
     controlNav: "thumbnails"
   });
 });
-</script>   
+</script>
+<script type="text/javascript" src="js/baseurl.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.17.0/URI.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/search.js"></script>
+<!--<script type="text/javascript" src="js/loginActivity.js"></script>-->
+<script type="text/javascript" src="js/view_profile.js"></script>
+<script type="text/javascript" src="js/validation.js"></script>
+
 </body>
 </html>	

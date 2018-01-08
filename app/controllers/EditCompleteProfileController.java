@@ -13,7 +13,8 @@ import play.mvc.Result;
 import serviceImpl.EditCompleteProfileServiceImpl;
 
 import javax.inject.Inject;
-import java.util.List;
+import javax.xml.bind.SchemaOutputResolver;
+//import java.util.List;
 
 public class EditCompleteProfileController extends Controller {
     @Inject
@@ -23,14 +24,19 @@ public class EditCompleteProfileController extends Controller {
     public Result srv005()
     {
         String profid= EncyDecyUtility.decrypt(request().cookie("uniquekey").value(),"yoursecretkeyofp");
+        System.out.println(profid+"::::::::::::");
        EditCompleteProfileEntity editCompleteProfileEntity=   editCompleteProfileService.getcompletedetails(profid);
        // EditCompleteProfileEntity editCompleteProfileEntity1=editCompleteProfileEntity.getAtp000();
        // editCompleteProfileEntity=list.get(0);
         //System.out.println(editCompleteProfileEntity.toString());
         Gson gson=new Gson();
         String responseJsonString=gson.toJson(editCompleteProfileEntity);
-       // System.out.println("::::::::::::::::::::::::;   "+responseJsonString);
-        return ok(responseJsonString.trim());
+        if(responseJsonString!=null) {
+            // System.out.println("::::::::::::::::::::::::;   "+responseJsonString);
+            return ok(responseJsonString.trim());
+        }
+        else
+            return redirect("/assets/public_html/complete_profile.html");
 
     }
     @BodyParser.Of(BodyParser.Json.class)
@@ -38,12 +44,16 @@ public class EditCompleteProfileController extends Controller {
     {
         JsonNode jsonNode=request().body().asJson();
         ObjectMapper objectMapper=new ObjectMapper();
+        String unique=request().cookie("uniquekey").value();
         try {
 
             EditCompleteProfileEntity editCompleteProfileEntity = objectMapper.treeToValue(jsonNode, EditCompleteProfileEntity.class);
             System.out.println(editCompleteProfileEntity.getAt008()+":::::::::::::;;;;;;");
+
             String profid=EncyDecyUtility.decrypt(request().cookie("uniquekey").value(),"yoursecretkeyofp");
-            //editCompleteProfileEntity.setAtp000(profid);
+            System.out.println(profid+"::::::::::::::::::");
+            editCompleteProfileEntity.setAtp000(profid);
+
             editCompleteProfileService.saveeditdetails(editCompleteProfileEntity,profid);
 
         }
@@ -52,7 +62,9 @@ public class EditCompleteProfileController extends Controller {
             e.printStackTrace();
         }
 
-        return ok("You have Edited Successfully");
+        //System.out.println(response().cookie().get());
+
+        return ok("You have Edited Successfully");//.withCookies(response().cookie("unique").get());
     }
 
 }

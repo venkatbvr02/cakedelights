@@ -507,7 +507,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <label class="col-md-4 control-lable1" for="country">Place of Birth : </label>
             <div class="col-md-2 form_radios">
                 <div class="select-block1">
-                    <select id="country" name="country" onchange="getDropdownValue(country)">
+                    <select id="country" name="country" onchange="populate(this.id,'state')">
                         <option value="0">Country</option>
                         <option value="india">India</option>
                         <option value="United States">United States</option>
@@ -523,19 +523,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="col-md-2 form_radios">
                 <div class="select-block1">
                     <select id="state" name="state" onchange="getDropdownValue(state)" >
-                        <option value="">State</option>
-                        <option value="Andhra Pradesh">Andhra pradesh </option>
-                        <option value="Assam">Assam</option>
-                        <option value="Goa">Goa</option>
-                        <option value="">4</option>
-                        <option value="">5</option>
-                        <option value="">6</option>
-                        <option value="">7</option>
-                        <option value="">8</option>
-                        <option value="">9</option>
-                        <option value="">10</option>
-                        <option value="">11</option>
-                        <option value="">12</option>
+                        <!--<option value="">State</option>-->
+                        <!--<option value="Andhra Pradesh">Andhra pradesh </option>-->
+                        <!--<option value="Assam">Assam</option>-->
+                        <!--<option value="Goa">Goa</option>-->
+                        <!--<option value="">4</option>-->
+                        <!--<option value="">5</option>-->
+                        <!--<option value="">6</option>-->
+                        <!--<option value="">7</option>-->
+                        <!--<option value="">8</option>-->
+                        <!--<option value="">9</option>-->
+                        <!--<option value="">10</option>-->
+                        <!--<option value="">11</option>-->
+                        <!--<option value="">12</option>-->
 
                     </select>
                 </div>
@@ -809,6 +809,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
 </div>
 <div class="gifloader" id="loadinggif"></div>
+<script>
+function populate(p1,p2) {
+    var p1=document.getElementById(p1);
+    var p2=document.getElementById(p2);
+    p2.innerHTML="";
+    if(s1.value=="india")
+    {
+        var optionarray=["|","Andra Pradesh|Andra Pradesh","Arunachal Pradesh|Arunachal Pradesh","Assam|Assam","Bihar|Bihar","Chhattisgarh|Chhattisgarh","Goa|Goa","Gujarat|Gujarat","Haryana|Haryana","Himachal Pradesh|Himachal Pradesh"];
+    }
+    for(var option in optionarray)
+    {
+        var pair=optionarray[option].split("|");
+        var newoption=document.createElement("option");
+        newoption.value=pair[0];
+        newoption.innerHTML=pair[1];
+        p2.options.add(newoption);
+    }
+}
+
+</script>
 </body>
 </html>
 

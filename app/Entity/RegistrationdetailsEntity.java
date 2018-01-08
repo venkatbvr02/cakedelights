@@ -2,6 +2,7 @@ package Entity;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import javax.inject.Inject;
 import javax.persistence.*;
 import java.sql.Date;
 
@@ -23,7 +24,6 @@ public class RegistrationdetailsEntity {
     private Date at004;
     private String at005;
     private String at006;
-
 
     public int getAt000() {
         return at000;
@@ -100,7 +100,6 @@ public class RegistrationdetailsEntity {
     public void setAt006(String at006) {
         this.at006 = at006;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -129,6 +128,20 @@ public class RegistrationdetailsEntity {
         result = 31 * result + (at005 != null ? at005.hashCode() : 0);
         result = 31 * result + (at006 != null ? at006.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "RegistrationdetailsEntity{" +
+                "at000=" + at000 +
+                ", atp000='" + atp000 + '\'' +
+                ", at001='" + at001 + '\'' +
+                ", at002='" + at002 + '\'' +
+                ", at003='" + at003 + '\'' +
+                ", at004=" + at004 +
+                ", at005='" + at005 + '\'' +
+                ", at006='" + at006 + '\'' +
+                '}';
     }
 }
 

@@ -1,6 +1,7 @@
 package controllers;
 
 import Entity.CompleteProfileEntity;
+import Entity.RegistrationdetailsEntity;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,9 +12,11 @@ import com.mysql.jdbc.ResultSetMetaData;
 import com.srujanika.utils.EncyDecyUtility;
 import com.srujanika.utils.HibernateUtils;
 import org.asynchttpclient.Request;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Http;
@@ -24,6 +27,8 @@ import javax.inject.Inject;
 import java.io.File;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Calendar;
+import java.util.Date;
 
 public class CompleteProfileController extends Controller {
     @Inject
@@ -66,6 +71,7 @@ public class CompleteProfileController extends Controller {
     }
     public Result uploadimage() {
         System.out.println("coming here to upload file :::::::::::");
+       // response().
         Http.MultipartFormData<File> body = request().body().asMultipartFormData();
         String profid=EncyDecyUtility.decrypt(request().cookie("uniquekey").value(),"yoursecretkeyofp");
         String result = completeProfileService.uploadProFile(body,profid);

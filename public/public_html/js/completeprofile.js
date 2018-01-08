@@ -11,8 +11,8 @@ function completeRegistration() {
     //alert("coming here");
     //alert(JSON.stringify(completeprofile));
     if( dovalidation()) {
-        $body.addClass("loading");
-      alert(JSON.stringify(completeprofile));
+      //  $body.addClass("loading");
+     // alert(JSON.stringify(completeprofile));
         $.ajax({
             url: baseurl+"/srv004",
             method: "POST",
@@ -22,7 +22,7 @@ function completeRegistration() {
 
             crossDomain: true,
             success: function (data) {
-                // alert("Registration Success");
+                //alert(data);
                 // $body.removeClass("loading");
                 if(data=="profile success") {
                     window.location.href = baseurl + "/assets/public_html/add_profilepic.html";

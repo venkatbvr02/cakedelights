@@ -4,8 +4,8 @@ $('#regsister_submit').click(function () {
 
 
     if(dovalidation()) {
-        $body.addClass("loading");
-        alert(JSON.stringify(register));
+       // $body.addClass("loading");
+       // alert(JSON.stringify(register));
         $.ajax({
             url: baseurl+"/srv001",
             method: "POST",
@@ -13,9 +13,9 @@ $('#regsister_submit').click(function () {
             data: JSON.stringify(register),
             crossDomain: true,
             success: function (data) {
-                $body.removeClass("loading");
+               // $body.removeClass("loading");
                 alert(data);
-                if(data==":registration success") {
+                if(data=="registration success") {
                     window.location.href = baseurl + "/assets/public_html/complete_profile.html";
                 }
             }

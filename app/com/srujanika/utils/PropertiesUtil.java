@@ -2,6 +2,7 @@ package com.srujanika.utils;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -25,6 +26,7 @@ public class PropertiesUtil {
         Properties properties=new Properties();
         try {
             properties.load(new FileInputStream("conf/matrimony.properties"));
+            //properties.(new FileOutputStream("conf/matrimony.properties"));
         } catch (IOException e) {
             e.printStackTrace();
         }

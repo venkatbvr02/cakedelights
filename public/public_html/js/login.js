@@ -11,7 +11,7 @@ function submitlogindetails() {
     if (dovalidation()) {
         // alert("coming here too");
         // alert(JSON.stringify(login));
-        $body.addClass("loading");
+        //$body.addClass("loading");
         $.ajax({
             url: baseurl+ "/srv002",
             method: "POST",
@@ -21,7 +21,7 @@ function submitlogindetails() {
             crossDomain: true,
             success: function (data) {
 
-                $body.removeClass("loading");
+                //$body.removeClass("loading");
                 if(data==""||data==undefined||data=="failure")
                 {
                     alert("login failed");
@@ -29,7 +29,7 @@ function submitlogindetails() {
 
                 }
                 else {
-                    alert(data);
+                    alert("Login Success");
 
                     window.location.href = baseurl + "/assets/public_html/index.html";
                 }

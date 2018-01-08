@@ -1,10 +1,14 @@
 package Entity;
 
+//import jdk.nashorn.internal.ir.annotations.Ignore;
+
+import java.util.Arrays;
+
 public class SearchEntity {
-    public String at004;
+     public int[] at034;
     public String at005;
     public String at007;
-    //public String at008;
+    public String at008;
     public String at035;
     public String at036;
     public String at037;
@@ -12,13 +16,6 @@ public class SearchEntity {
     public String at049;
 
 
-    public String getAt004() {
-        return at004;
-    }
-
-    public void setAt004(String at004) {
-        this.at004 = at004;
-    }
 
     public String getAt005() {
         return at005;
@@ -32,13 +29,23 @@ public class SearchEntity {
         return at007;
     }
 
-//    public String getAt008() {
-//        return at008;
-//    }
-//
-//    public void setAt008(String at008) {
-//        this.at008 = at008;
-//    }
+    public String getAt008() {
+        return at008;
+    }
+
+    public void setAt008(String at008) {
+        this.at008 = at008;
+    }
+
+
+
+    public int[] getAt034() {
+        return at034;
+    }
+
+    public void setAt034(int[] at034) {
+        this.at034 = at034;
+    }
 
     public void setAt007(String at007) {
         this.at007 = at007;
@@ -87,7 +94,7 @@ public class SearchEntity {
     @Override
     public String toString() {
         return "SearchEntity{" +
-                "at004='" + at004 + '\'' +
+
                 ", at005='" + at005 + '\'' +
                 ", at007='" + at007 + '\'' +
                 ", at035='" + at035 + '\'' +
@@ -95,6 +102,7 @@ public class SearchEntity {
                 ", at037='" + at037 + '\'' +
                 ", at048='" + at048 + '\'' +
                 ", at049='" + at049 + '\'' +
+
                 '}';
     }
 }

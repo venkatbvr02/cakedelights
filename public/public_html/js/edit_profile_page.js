@@ -24,67 +24,73 @@ $(document).ready(function ()
         method:"GET",
         dataType:'json',
         success: function (data) {
-            var jsonResponse=$.parseJSON(JSON.stringify(data));;
-            // alert(jsonResponse.at007);
-            setradioValue("maritalstatus",jsonResponse.at007);
-            setradioValue("familystatus",jsonResponse.at009);
-            setradioValue("familytype",jsonResponse.at010);
-            setradioValue("familyvalues",jsonResponse.at011);
-            setradioValue("anydisability",jsonResponse.at012);
-            setSelectValue("height",jsonResponse.at008);
-            setTextValue("caste",jsonResponse.at013);
-            setTextValue("subcaste",jsonResponse.at014);
-            setTextValue("gothram",jsonResponse.at015);
-            setradioValue("dosham",jsonResponse.at016);
-            setTextValue("aboutme",jsonResponse.at022);
-            setTextValue("highereducation",jsonResponse.at017);
-            setradioValue("employedIn",jsonResponse.at018);
-            setTextValue("occupation",jsonResponse.at019);
-            setTextValue("income",jsonResponse.at020);
-            setradioValue("incomecurrencytype",jsonResponse.at021);
-            setradioValue("bodytype",jsonResponse.at023);
-            setSelectValue("weight",jsonResponse.at024);
-            setTextValue("educationInDetail",jsonResponse.at025);
-            setTextValue("occupationInDetail",jsonResponse.at026);
-            setradioValue("eatingHabbit",jsonResponse.at027);
-            setradioValue("drinkingHabbit",jsonResponse.at028);
-            setradioValue("smokingHabbit",jsonResponse.at029);
-            setSelectValue("star",jsonResponse.at030);
-            setTextValue("raasi",jsonResponse.at031);
-            setTextValue("time",jsonResponse.at032);
-            //setSelectValue("hours",jsonResponse.at032);
-            //setSelectValue("minutes",jsonResponse.at033);
-            //setSelectValue("ampm",jsonResponse.at034);
-            setSelectValue("country",jsonResponse.at035);
-            setSelectValue("state",jsonResponse.at036);
-            setSelectValue("city",jsonResponse.at037);
-            setSelectValue("fatherstatus",jsonResponse.at038);
-            setSelectValue("motherstatus",jsonResponse.at039);
-            setSelectValue("religion",jsonResponse.at048);
-            setSelectValue("mothertongue",jsonResponse.at049);
-            setSelectValue("noofbrothers",jsonResponse.at040);
-            setSelectValue("noofbrothersmarried",jsonResponse.at041);
-            setSelectValue("noofsisters",jsonResponse.at042);
-            setSelectValue("noofsistersmarried",jsonResponse.at043);
-            setradioValue("familylocation",jsonResponse.at044);
-            setSelectValue("countrycode",jsonResponse.at045);
-            setTextValue("mobilenumber",jsonResponse.at046);
-            setTextValue("ancestralorigin",jsonResponse.at047);
+            // alert(data);
+            if (data == null) {
+                window.location.href = "/assets/public_html/complete_profile.html";
+            }
+            else {
+                var jsonResponse = $.parseJSON(JSON.stringify(data));
+                ;
+                // alert(jsonResponse.at036+":::::::::::"+jsonResponse.at037);
+                setradioValue("maritalstatus", jsonResponse.at007);
+                setradioValue("familystatus", jsonResponse.at009);
+                setradioValue("familytype", jsonResponse.at010);
+                setradioValue("familyvalues", jsonResponse.at011);
+                setradioValue("anydisability", jsonResponse.at012);
+                setSelectValue("height", jsonResponse.at008);
+                setTextValue("caste", jsonResponse.at013);
+                setTextValue("subcaste", jsonResponse.at014);
+                setTextValue("gothram", jsonResponse.at015);
+                setradioValue("dosham", jsonResponse.at016);
+                setTextValue("aboutme", jsonResponse.at022);
+                setTextValue("highereducation", jsonResponse.at017);
+                setradioValue("employedIn", jsonResponse.at018);
+                setTextValue("occupation", jsonResponse.at019);
+                setTextValue("income", jsonResponse.at020);
+                setradioValue("incomecurrencytype", jsonResponse.at021);
+                setradioValue("bodytype", jsonResponse.at023);
+                setSelectValue("weight", jsonResponse.at024);
+                setTextValue("educationInDetail", jsonResponse.at025);
+                setTextValue("occupationInDetail", jsonResponse.at026);
+                setradioValue("eatingHabbit", jsonResponse.at027);
+                setradioValue("drinkingHabbit", jsonResponse.at028);
+                setradioValue("smokingHabbit", jsonResponse.at029);
+                setSelectValue("star", jsonResponse.at030);
+                setTextValue("raasi", jsonResponse.at031);
+                setTextValue("time", jsonResponse.at032);
+                //setSelectValue("hours",jsonResponse.at032);
+                //setSelectValue("minutes",jsonResponse.at033);
+                //setSelectValue("ampm",jsonResponse.at034);
+                //setSelectValue("country",jsonResponse.at035);
+                setSelectValue("state", jsonResponse.at036);
+                setSelectValue("city", jsonResponse.at037);
+                setSelectValue("fatherstatus", jsonResponse.at038);
+                setSelectValue("motherstatus", jsonResponse.at039);
+                setSelectValue("religion", jsonResponse.at048);
+                setSelectValue("mothertongue", jsonResponse.at049);
+                // setSelectValue("noofbrothers",jsonResponse.at040);
+                setSelectValue("noofbrothersmarried", jsonResponse.at041);
+                //setSelectValue("noofsisters",jsonResponse.at042);
+                setSelectValue("noofsistersmarried", jsonResponse.at043);
+                setradioValue("familylocation", jsonResponse.at044);
+                setSelectValue("countrycode", jsonResponse.at045);
+                setTextValue("mobilenumber", jsonResponse.at046);
+                setTextValue("ancestralorigin", jsonResponse.at047);
 
-            // $( "#height" ).val(jsonResponse.at008);
-            //anydisability
-            // $("input[name=maritalstatus][value=" + jsonResponse.at007.trim() + "]").attr('checked', 'checked');
-            // $("input[name=maritalstatus]").val([jsonResponse.at007]);
+                // $( "#height" ).val(jsonResponse.at008);
+                //anydisability
+                // $("input[name=maritalstatus][value=" + jsonResponse.at007.trim() + "]").attr('checked', 'checked');
+                // $("input[name=maritalstatus]").val([jsonResponse.at007]);
 
-            // $.each(data, function (index, element) {
-            //     $('body').append($('<div>', {
-            //         text: element.name
-            //     }));
-            // });
+                // $.each(data, function (index, element) {
+                //     $('body').append($('<div>', {
+                //         text: element.name
+                //     }));
+                // });
 
-            //contentType:"application/json",
-        }  // data:JSON.parse()
-
+                //contentType:"application/json",
+            }  // data:JSON.parse()
+        }
     });
 
 });
@@ -96,9 +102,9 @@ function submiteditdetails() {
     //alert(JSON.stringify(editcomplete));
     if(dovalidation())
     {
-        alert("coming");
-        alert(JSON.stringify(editcomplete));
-        $body.addClass("loading");
+        //alert("coming");
+        //alert(JSON.stringify(editcomplete));
+        //$body.addClass("loading");
         $.ajax({
             url: baseurl+ "/srv008",
             method: "POST",
@@ -107,8 +113,10 @@ function submiteditdetails() {
             crossDomain: true,
             success: function (data) {
 
-                $body.removeClass("loading");
+               // $body.removeClass("loading");
                     alert(data);
+
+
                     window.location.href = baseurl + "/assets/public_html/index.html";
                 }
 
@@ -393,7 +401,7 @@ function dovalidation() {
     }
 
     var country=getDropdownValue("country");
-    if(country==null||country=="")
+    if(country==null||country==""|| country==0)
     {
         showAlert("Validation Error","country should not be empty");
         return false;
@@ -439,7 +447,7 @@ function dovalidation() {
         editcomplete["at039"]=motherstatus;
     }
     var noofbrothers=getDropdownValue("noofbrothers");
-    if(noofbrothers==null||noofbrothers=="")
+    if(noofbrothers==null||noofbrothers==""||noofbrothers==0)
     {
         showAlert("Validation Error","noofbrothers should not be empty");
         return false;
@@ -457,7 +465,7 @@ function dovalidation() {
         editcomplete["at041"]=noofbrothersmarried;
     }
     var noofsisters=getDropdownValue("noofsisters");
-    if(noofsisters==null||noofsisters=="")
+    if(noofsisters==null||noofsisters==""||noofsisters==0)
     {
         showAlert("Validation Error","noofsisters should not be empty");
         return false;

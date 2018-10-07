@@ -1,0 +1,5 @@
+<root>
+    <item name='play.mvc.Http'>
+        <annotation name='java.lang.Deprecated'/>
+    </item>
+</root>

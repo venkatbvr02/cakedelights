@@ -1,0 +1,33 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+#GET  /images/*file  controllers.Assets.at(path="/images/profilepicture", file)
+#GET     /assets/*file               controllers.Assets.at(path="/images", file)
+
+POST    /srv001                     controllers.Application.srv001
+POST    /srv002                     controllers.Application.srv002
+#POST    /srv003                     controllers.EditProfileController.srv003
+POST    /srv004                     controllers.CompleteProfileController.srv004
+GET     /srv005                     controllers.EditCompleteProfileController.srv005
+POST    /srv006                     controllers.CompleteProfileController.uploadimage
+#GET    /srv007                     controllers.EditEditProfileController.srv007
+POST   /srv008                      controllers.EditCompleteProfileController.editcomplete
+POST    /srv009                     controllers.SearchController.search
+POST   /srv010                      controllers.LogoutController.logout()
+POST    /srv011                     controllers.ProfileSearchController.searchProfile
+POST    /srv012                     controllers.ProfileSearchController.getprofiles
+POST    /srv013                     controllers.ProfileSearchController.getviewprofile
+GET     /srv014                     controllers.MatchesController.matchprofiles
+POST    /srv015                     controllers.MatchesController.matchbyid
+GET     /srv016                     controllers.ViewedProfileController.getViewedProfiles
+GET     /srv017                     controllers.ViewedProfileController.getclikedonmeprofiles
+GET     /srv018                     controllers.SearchController.getfeaturedprofiles()
+
+#OPTIONS /       filters.CorsFilter.
+#OPTIONS /srv002    play.filters.cors.CORSFilter

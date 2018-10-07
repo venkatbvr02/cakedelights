@@ -1,0 +1,28 @@
+.gifloader {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 )
+   url('https://upload.wikimedia.org/wikipedia/commons/b/b9/Youtube_loading_symbol_1_(wobbly).gif')
+    /*url('https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif')*/
+    /*url('https://cdn.tutsplus.com/webdesign/uploads/legacy/tuts/377_loading_gif/final.gif')*/
+    /*url('https://www.womenwhocode.com/assets/jobs/loader-2177facbb4a68594d9eefff6fb10f48f03f19fb90dcc1e2f69edf90889f4b109.gif')*/
+    50% 50%
+    no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .gifloader {
+    display: block;
+}
